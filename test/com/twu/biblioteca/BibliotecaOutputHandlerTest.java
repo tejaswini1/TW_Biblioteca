@@ -48,6 +48,19 @@ public class BibliotecaOutputHandlerTest {
 
     }
 
+    @Test
+    public void shouldPrintBookDetails(){
+        Book book = mock(Book.class);
+        when(book.toString())
+                .thenReturn("Alchemist, Paulo, 26Feb2000");
+
+        BibliotecaOutputHandler bibliotecaOutputHandler = new BibliotecaOutputHandler();
+        bibliotecaOutputHandler.displayListBooks(book);
+
+        assertEquals("Alchemist, Paulo, 26Feb2000\n", outContent.toString());
+
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(null);

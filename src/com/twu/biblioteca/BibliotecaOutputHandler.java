@@ -9,4 +9,8 @@ public class BibliotecaOutputHandler {
     public void displayListBooks(Books books){
         System.out.println(books.toString());
     }
+
+    public void displayListBooks(Book book){
+        System.out.println(book.toString());
+    }
 }
