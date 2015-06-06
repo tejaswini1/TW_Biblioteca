@@ -3,18 +3,16 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 
 public class Books {
-    ArrayList<String> books = new ArrayList<String>();
+    ArrayList<Book> books = new ArrayList<Book>();
 
-    public Books(){
-        books.add("OS");
-        books.add("Java");
-        books.add("Db");
+    public Books(ArrayList<Book> books){
+        this.books = books;
     }
 
     @Override
     public String toString() {
         String booksList = "";
-        for(String book:books){
+        for(Book book:books){
             booksList += book + "\n";
         }
         return booksList;

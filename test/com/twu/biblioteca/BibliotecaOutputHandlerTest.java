@@ -39,12 +39,12 @@ public class BibliotecaOutputHandlerTest {
     public void shouldPrintListOfBooks(){
         Books books = mock(Books.class);
         when(books.toString())
-                .thenReturn("OS\nJava");
+                .thenReturn("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990");
 
         BibliotecaOutputHandler bibliotecaOutputHandler = new BibliotecaOutputHandler();
         bibliotecaOutputHandler.displayListBooks(books);
 
-        assertEquals("OS\nJava\n", outContent.toString());
+        assertEquals("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n", outContent.toString());
 
     }
 
