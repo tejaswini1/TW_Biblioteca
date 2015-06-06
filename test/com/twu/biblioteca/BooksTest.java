@@ -13,6 +13,7 @@ public class BooksTest {
 
     String actualList = books.toString();
 
-    assertEquals(expectedList, actualList);}
+    assertEquals(expectedList, actualList);
+    }
 
 }

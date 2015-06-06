@@ -5,4 +5,8 @@ public class BibliotecaOutputHandler {
     public void displayWelcomeMessage(Biblioteca biblioteca){
         System.out.println(biblioteca.welcomeMessage());
     }
+
+    public void displayListBooks(Books books){
+        System.out.println(books.toString());
+    }
 }

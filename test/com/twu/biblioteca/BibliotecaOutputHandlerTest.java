@@ -35,6 +35,19 @@ public class BibliotecaOutputHandlerTest {
 
     }
 
+    @Test
+    public void shouldPrintListOfBooks(){
+        Books books = mock(Books.class);
+        when(books.toString())
+                .thenReturn("OS\nJava");
+
+        BibliotecaOutputHandler bibliotecaOutputHandler = new BibliotecaOutputHandler();
+        bibliotecaOutputHandler.displayListBooks(books);
+
+        assertEquals("OS\nJava\n", outContent.toString());
+
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(null);
