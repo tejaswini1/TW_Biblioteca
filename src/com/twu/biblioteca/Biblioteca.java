@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 public class Biblioteca {
 
         public String welcomeMessage(){
-            return null;
+            return "Welcome";
         }
 
 

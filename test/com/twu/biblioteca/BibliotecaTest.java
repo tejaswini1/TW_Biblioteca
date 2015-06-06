@@ -8,12 +8,13 @@ import static org.junit.Assert.assertThat;
 
 public class BibliotecaTest {
 
+
     @Test
-    public void shouldReturnNullString(){
+    public void shouldReturnWelcomeString(){
         Biblioteca biblioteca = new Biblioteca();
 
         String actualMessage = biblioteca.welcomeMessage();
 
-        assertThat(actualMessage, is(equalTo(null)));
+        assertThat(actualMessage, is(equalTo("Welcome")));
     }
 }
