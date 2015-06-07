@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class BibliotecaOutputHandlerTest {
+public class BibliotecaAppOutputHandlerTest {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 
@@ -24,12 +24,12 @@ public class BibliotecaOutputHandlerTest {
 
     @Test
     public void shouldPrintWelcomeMessage(){
-        Biblioteca bibliotecaStub = mock(Biblioteca.class);
-        when(bibliotecaStub.welcomeMessage())
+        BibliotecaApp bibliotecaAppStub = mock(BibliotecaApp.class);
+        when(bibliotecaAppStub.welcomeMessage())
                 .thenReturn("Welcome B");
 
         BibliotecaOutputHandler bibliotecaOutputHandler = new BibliotecaOutputHandler();
-        bibliotecaOutputHandler.displayWelcomeMessage(bibliotecaStub);
+        bibliotecaOutputHandler.displayWelcomeMessage(bibliotecaAppStub);
 
         assertEquals("Welcome B\n", outContent.toString());
 
