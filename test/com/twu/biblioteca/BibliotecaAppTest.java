@@ -20,12 +20,13 @@ public class BibliotecaAppTest {
         assertThat(actualMessage, is(equalTo("Welcome")));
     }
 
-//    @Test
-//    public void shouldDisplayMenuItems(){
-//
-//        BibliotecaApp bibliotecaApp = new BibliotecaApp();
-//
-//        String actualItem = bibliotecaApp.menu("List books");
-//
-//        assertThat(actualItem, is(equalTo("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n")));
+    @Test
+    public void shouldDisplayMenuItems() {
+
+        BibliotecaApp bibliotecaApp = new BibliotecaApp();
+
+        String actualItem = bibliotecaApp.menu("List Books");
+
+        assertThat(actualItem, is(equalTo("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n")));
+    }
 }

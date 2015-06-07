@@ -7,12 +7,12 @@ public class BibliotecaApp {
             return "Welcome";
         }
 
-//        public void menu(int option){
-//            switch (option){
-//
-//                case 1:
-//                    new Books();
-//            }
-//        }
+        public String menu(String option){
+
+            if(option == "List Books")
+                return new Books().toString();
+
+            return "Inavlid Option";
+        }
 
 }
