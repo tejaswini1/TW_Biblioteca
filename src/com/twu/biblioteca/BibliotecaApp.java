@@ -12,7 +12,7 @@ public class BibliotecaApp {
             if(option == "List Books")
                 return new Books().toString();
 
-            return "Inavlid Option";
+            return "Select a valid Option!";
         }
 
 }
