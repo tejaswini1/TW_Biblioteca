@@ -4,8 +4,8 @@ package com.twu.biblioteca;
 
 public class BibliotecaOutputHandler {
 
-    public void displayWelcomeMessage(BibliotecaApp bibliotecaApp){
-        System.out.println(bibliotecaApp.welcomeMessage());
+    public void displayWelcomeMessage(){
+        System.out.println("Welcome");
     }
 
     public void displayListBooks(Books books){
