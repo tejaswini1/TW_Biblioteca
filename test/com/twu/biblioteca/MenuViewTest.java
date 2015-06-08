@@ -4,15 +4,21 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 
 import static junit.framework.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class MenuViewTest {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+     ByteArrayInputStream byteArrayInputStream ;
 
     @Before
     public void setUpStreams() {
@@ -31,6 +37,15 @@ public class MenuViewTest {
         assertEquals("1] List Of Books\n", outContent.toString());
     }
 
+    @Test
+    public void should() throws IOException {
+        String inputData  ="1";
+        byteArrayInputStream = new ByteArrayInputStream(inputData.getBytes());
+        System.setIn(byteArrayInputStream);
+
+        int actualOption = new MenuView(new Menu()).readOption();
+        assertThat(actualOption, is(equalTo(1)));
+    }
     @After
     public void cleanUpStreams() {
         System.setOut(null);
