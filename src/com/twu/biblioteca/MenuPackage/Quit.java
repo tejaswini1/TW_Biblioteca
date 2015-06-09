@@ -1,6 +1,6 @@
 package com.twu.biblioteca.MenuPackage;
 
-public class QuitActionPerformer implements MenuActionPerformable {
+public class Quit implements MenuActionPerformable {
 
     @Override
     public void execute() {

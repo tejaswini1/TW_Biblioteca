@@ -1,5 +1,8 @@
 package com.twu.biblioteca.MenuPackage;
 
+import com.twu.biblioteca.Books;
+import com.twu.biblioteca.BooksView;
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -10,8 +13,8 @@ public class Menu {
     HashMap<Integer, MenuActionPerformable> menuItems = new HashMap<Integer, MenuActionPerformable>();
 
     public Menu (){
-        menuItems.put(1,new ListBooksActionPerformer());
-        menuItems.put(2,new InvalidOptionPerformer());
+        menuItems.put(1,new ListAllBooks(new BooksView(new Books())));
+        menuItems.put(2,new InvalidOption());
 
 
 

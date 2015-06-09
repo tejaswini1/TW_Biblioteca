@@ -1,14 +1,19 @@
 package com.twu.biblioteca.MenuPackage;
 
+import com.twu.biblioteca.BooksView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.when;
 
 import static org.junit.Assert.*;
-public class ListBooksActionPermoreTest {
+public class ListAllBooksTest {
 
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -20,10 +25,11 @@ public class ListBooksActionPermoreTest {
 
         @Test
         public void shouldDisplayListOfBooksOnConsole(){
-            ListBooksActionPerformer listAllBooks = new ListBooksActionPerformer();
+            BooksView booksView = mock(BooksView.class);
+            ListAllBooks listAllBooks = new ListAllBooks(booksView);
             listAllBooks.execute();
 
-            assertEquals("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n", outContent.toString());
+            Mockito.verify(booksView, times(1)).displayBooks();
         }
         @After
         public void cleanUpStreams() {

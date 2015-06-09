@@ -3,13 +3,15 @@ package com.twu.biblioteca.MenuPackage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
-public class InvalidOptionPerformerTest {
+public class InvalidOptionTest {
+
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
@@ -20,8 +22,8 @@ public class InvalidOptionPerformerTest {
 
     @Test
     public void shouldDisplayMessageOnConsole() {
-        InvalidOptionPerformer invalidOptionPerformer = new InvalidOptionPerformer();
-        invalidOptionPerformer.execute();
+        InvalidOption invalidOption = new InvalidOption();
+        invalidOption.execute();
 
         assertEquals(" Type a Valid Option ..\n", outContent.toString());
     }
