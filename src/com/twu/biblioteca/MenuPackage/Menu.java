@@ -26,8 +26,6 @@ public class Menu {
 
         public void select(MenuView menuView) throws IOException {
            int option = menuView.readOption();
-             if(menuItems.get(option) == null )
-                 menuItems.get(2).execute();
             menuItems.get(option).execute();
 
         }
