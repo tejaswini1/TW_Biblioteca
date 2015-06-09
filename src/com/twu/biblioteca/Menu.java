@@ -9,21 +9,21 @@ public class Menu {
 
     HashMap<Integer, MenuActionPerformable> menuItems = new HashMap<Integer, MenuActionPerformable>();
 
-//    public Menu (){
-//        menuItems.put(1,new ListAllBooks());
-//        menuItems.put(2,new InvalidOtion());
-//
-//
-//    }
+    public Menu (){
+        menuItems.put(1,new ListBooksActionPerformer());
+
+
+
+    }
           public String display(){
               return "1] List Books";
 
           }
 
-//        public void select(MenuView menuView) throws IOException {
-//           int option = menuView.readOption();
-//             menuItems.get(option).compute();
-//
-//        }
+        public void select(MenuView menuView) throws IOException {
+           int option = menuView.readOption();
+             menuItems.get(option).execute();
+
+        }
 
 }
