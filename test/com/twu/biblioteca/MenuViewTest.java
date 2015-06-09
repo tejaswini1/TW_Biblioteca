@@ -38,7 +38,7 @@ public class MenuViewTest {
     }
 
     @Test
-    public void should() throws IOException {
+    public void shouldTakeOptionInputFromConsole() throws IOException {
         String inputData  ="1";
         byteArrayInputStream = new ByteArrayInputStream(inputData.getBytes());
         System.setIn(byteArrayInputStream);
