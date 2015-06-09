@@ -31,18 +31,7 @@ public class BibliotecaOutputHandlerTest {
 
     }
 
-    @Test
-    public void shouldPrintListOfBooks(){
-        Books books = mock(Books.class);
-        when(books.toString())
-                .thenReturn("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990");
-
-        BibliotecaOutputHandler bibliotecaOutputHandler = new BibliotecaOutputHandler();
-        bibliotecaOutputHandler.displayListBooks(books);
-
-        assertEquals("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n", outContent.toString());
-
-    }
+   
 
     @Test
     public void shouldPrintBookDetails(){
