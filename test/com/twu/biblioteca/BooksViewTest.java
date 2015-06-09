@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.MenuPackage.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,12 +24,9 @@ public class BooksViewTest {
     }
 
     @Test
-    public void shouldDispalyListOfBooksWhen1() throws IOException {
-        Menu menu = new Menu();
-        MenuView menuViewStub = mock(MenuView.class);
-        when(menuViewStub.readOption())
-                .thenReturn(1);
-        menu.select(menuViewStub);
+    public void shouldDispalyListOfBooksToConsole() throws IOException {
+        BooksView booksView = new BooksView(new Books());
+        booksView.displayBooks();
 
         assertEquals("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n", outContent.toString());
 

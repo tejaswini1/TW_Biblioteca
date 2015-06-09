@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.MenuPackage;
 
 import org.junit.After;
 import org.junit.Before;
