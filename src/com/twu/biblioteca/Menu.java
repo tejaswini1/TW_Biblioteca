@@ -11,6 +11,7 @@ public class Menu {
 
     public Menu (){
         menuItems.put(1,new ListBooksActionPerformer());
+        menuItems.put(2,new InvalidOptionPerformer());
 
 
 
@@ -22,7 +23,9 @@ public class Menu {
 
         public void select(MenuView menuView) throws IOException {
            int option = menuView.readOption();
-             menuItems.get(option).execute();
+             if(menuItems.get(option) == null )
+                 menuItems.get(2).execute();
+            menuItems.get(option).execute();
 
         }
 
