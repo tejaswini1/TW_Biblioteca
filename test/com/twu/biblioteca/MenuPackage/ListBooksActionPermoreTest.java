@@ -19,7 +19,7 @@ public class ListBooksActionPermoreTest {
 
 
         @Test
-        public void shouldDisplayListOfBooks(){
+        public void shouldDisplayListOfBooksOnConsole(){
             ListBooksActionPerformer listAllBooks = new ListBooksActionPerformer();
             listAllBooks.execute();
 

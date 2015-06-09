@@ -19,7 +19,7 @@ public class InvalidOptionPerformerTest {
 
 
     @Test
-    public void shouldDisplayMessage() {
+    public void shouldDisplayMessageOnConsole() {
         InvalidOptionPerformer invalidOptionPerformer = new InvalidOptionPerformer();
         invalidOptionPerformer.execute();
 
