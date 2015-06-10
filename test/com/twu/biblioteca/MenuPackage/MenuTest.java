@@ -3,6 +3,7 @@ package com.twu.biblioteca.MenuPackage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 public class MenuTest {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -36,11 +38,14 @@ public class MenuTest {
     public void shouldDispalyListOfBooksWhenListAllBooksIsSelected() throws IOException {
         Menu menu = new Menu();
         MenuView menuViewStub = mock(MenuView.class);
+        ListAllBooks listAllBooks = mock(ListAllBooks.class);
         when(menuViewStub.readOption())
                 .thenReturn(1);
         menu.select(menuViewStub);
 
-        assertEquals("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n", outContent.toString());
+        Mockito.verify(listAllBooks, times(1)).execute();
+
+//        assertEquals("Java, Jones, 21Feb2019\nCN, Stalling, 3Oct1990\n", outContent.toString());
 
     }
 
