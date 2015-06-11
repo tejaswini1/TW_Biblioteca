@@ -16,7 +16,7 @@ public class MenuController {
         bibliotecaView.display(Messages.MENU_ITEMS);
     }
 
-    public void compute(int option){
-        menu.compute(option);
+    public void selectOption(){
+        menu.compute(bibliotecaView.readInt());
     }
 }

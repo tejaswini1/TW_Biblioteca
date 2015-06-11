@@ -18,4 +18,8 @@ public class BooksController {
         String data = books.toString();
         bibliotecaView.display(data);
     }
+
+    public void checkout(String nameOfBook){
+
+    }
 }

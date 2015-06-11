@@ -5,7 +5,7 @@ import com.twu.biblioteca.Messages;
 
 public class InvalidOption implements MenuActionPerformable {
 
-    private BibliotecaView bibliotecaView = new BibliotecaView();
+    private BibliotecaView bibliotecaView;
     public InvalidOption(BibliotecaView bibliotecaView){
         this.bibliotecaView = bibliotecaView ;
     }

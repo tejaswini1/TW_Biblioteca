@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -20,7 +21,7 @@ public class BibliotecaViewTest {
 
     @Test
     public void shouldPrintWelcomeMessage(){
-        BibliotecaView bibliotecaView = new BibliotecaView();
+        BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));
 
         bibliotecaView.display(Messages.WELCOME_MESSAGE);
 
