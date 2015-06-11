@@ -10,7 +10,8 @@ public class CheckoutTest {
     @Test
     public void shouldTakeInputFromBibliotecView() {
         BibliotecaView bibliotecaView = mock(BibliotecaView.class);
-        Checkout checkout = new Checkout(bibliotecaView);
+        BooksController booksController = mock(BooksController.class);
+        Checkout checkout = new Checkout(bibliotecaView, booksController);
 
         checkout.execute();
 
