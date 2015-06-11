@@ -1,24 +1,26 @@
 package com.twu.biblioteca.MenuPackage;
 
 import com.twu.biblioteca.BibliotecaView;
+
 import java.util.HashMap;
 
 // handles work related to user and biblioteca system
 public class Menu {
 
 
-    private HashMap<String, MenuActionPerformable> menuItems = new HashMap<String, MenuActionPerformable>();
-    private BibliotecaView bibliotecaView;
+    private HashMap<Integer, MenuActionPerformable> menuItems = new HashMap<Integer, MenuActionPerformable>();
 
-    public Menu(HashMap<String, MenuActionPerformable> menuItems, BibliotecaView bibliotecaView) {
+
+    public Menu(HashMap<Integer, MenuActionPerformable> menuItems) {
         this.menuItems = menuItems;
-        this.bibliotecaView = bibliotecaView;
     }
 
-
-    public void displayItems(){
-        String items = "1] List All Books\n 2] exit";
-        bibliotecaView.display(items);
+    public void compute(int option) {
+        if (menuItems.get(option) == null)
+            menuItems.get(2).execute();
+        else
+            menuItems.get(option).execute();
     }
+
 
 }

@@ -13,15 +13,6 @@ import static org.mockito.internal.verification.VerificationModeFactory.times;
 public class MenuTest {
 
 
-    @Test
-    public void shouldDisplayMenuItems() {
-        BibliotecaView bibliotecaView = mock(BibliotecaView.class);
-        HashMap<String, MenuActionPerformable> menuItems = new HashMap<String, MenuActionPerformable>();
-        Menu menu = new Menu(menuItems, bibliotecaView);
 
-        menu.displayItems();
-
-        verify(bibliotecaView, times(1)).display(anyString());
-    }
 
 }
