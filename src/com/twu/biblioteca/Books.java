@@ -6,9 +6,8 @@ import java.util.ArrayList;
 public class Books {
     ArrayList<Book> books = new ArrayList<Book>();
 
-    public Books(){
-        books.add(new Book("Java", "Jones", "21Feb2019"));
-        books.add(new Book("CN", "Stalling", "3Oct1990"));
+    public Books(ArrayList<Book> books){
+
     }
 
     @Override
