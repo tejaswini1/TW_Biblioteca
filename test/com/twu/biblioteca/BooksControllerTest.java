@@ -23,7 +23,7 @@ public class BooksControllerTest {
 
         booksController.listAllBooks();
 
-        verify(bibliotecaViewStub, times(1)).display(booksStub.toString());
+        verify(bibliotecaViewStub, times(1)).display(anyString());
 
     }
 
