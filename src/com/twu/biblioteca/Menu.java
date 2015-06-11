@@ -7,8 +7,8 @@ public class Menu {
 
     HashMap<String, ActionListener> menuItems = new HashMap<String, ActionListener>();
 
-    public Menu(HashMap<String, ActionListener> menuItems){
-            this.menuItems = menuItems;
+    public Menu(HashMap<String, ActionListener> menuItems) {
+        this.menuItems = menuItems;
     }
 
 }
