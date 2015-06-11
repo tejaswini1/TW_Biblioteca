@@ -1,18 +1,17 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.BibliotecaView;
-import com.twu.biblioteca.Books;
+
 import com.twu.biblioteca.MenuPackage.BooksController;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
 public class BooksControllerTest {
+
+
+
 
     @Test
     public void shouldCallDisplayMethodOfBibliotecaView(){
@@ -24,7 +23,7 @@ public class BooksControllerTest {
 
         booksController.listAllBooks();
 
-        Mockito.verify(bibliotecaViewStub, times(1)).display(booksStub.toString());
+        verify(bibliotecaViewStub, times(1)).display(booksStub.toString());
 
     }
 
