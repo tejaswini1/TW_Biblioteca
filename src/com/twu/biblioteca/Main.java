@@ -28,5 +28,7 @@ public class Main {
         MenuController menuController = new MenuController(bibliotecaView, menu);
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, booksController, menuController);
+
+        bibliotecaApp.start();
     }
 }

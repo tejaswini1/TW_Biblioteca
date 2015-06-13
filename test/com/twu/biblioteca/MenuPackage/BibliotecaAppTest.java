@@ -4,7 +4,6 @@ import com.twu.biblioteca.BibliotecaView;
 import com.twu.biblioteca.Messages;
 import org.junit.Test;
 
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

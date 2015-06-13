@@ -18,7 +18,7 @@ public class MenuControllerTest {
         Menu menu = mock(Menu.class);
         MenuController menuController = new MenuController(bibliotecaView, menu);
 
-        menuController.selectOption();
+        menuController.selectOption(1);
 
         verify(menu, times(1)).compute(anyInt());
     }

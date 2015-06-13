@@ -14,7 +14,7 @@ public class MenuController {
 
 
 
-    public void selectOption(){
-        menu.compute(bibliotecaView.readInt());
+    public void selectOption(int option){
+        menu.compute(option);
     }
 }
