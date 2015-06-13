@@ -5,6 +5,6 @@ public interface Messages {
     String WELCOME_MESSAGE = " Welcome to biblioteca ";
     String INVALID_MESSAGE = " Select Valid Option! ";
     String MENU_ITEMS = " 1] List of ALL Books \n 2] Checkout \n 3] Quit";
-    String CHECKOUT_SUCCESSFUL = "Successful checkout" ;
-    String CHECKOUT_UNSUCCESSFUL = "Unsuccessful checkout";
+    String CHECKOUT_SUCCESSFUL = "Thank you! Enjoy the book" ;
+    String CHECKOUT_UNSUCCESSFUL = "The book is not available";
 }

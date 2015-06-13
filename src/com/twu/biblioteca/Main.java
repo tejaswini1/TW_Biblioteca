@@ -16,15 +16,17 @@ public class Main {
 
         BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));
 
-        BooksController booksController = new BooksController(bibliotecaView, books);
+
+        BookTokenizer bookTokenizer = new BookTokenizer();
+        BooksController booksController = new BooksController(bibliotecaView, books, bookTokenizer);
 
         HashMap<Integer, MenuActionPerformable> menuList = new HashMap<Integer, MenuActionPerformable>();
 
         menuList.put(1, new ListAllBooks(booksController));
-        menuList.put(2, new Quit());
-        menuList.put(3, new InvalidOption(bibliotecaView));
-        BookTokenizer bookTokenizer = new BookTokenizer();
-        Checkout checkout = new Checkout(bibliotecaView, booksController, bookTokenizer);
+        menuList.put(2, new Checkout(bibliotecaView, booksController));
+        menuList.put(3, new Quit());
+        menuList.put(4, new InvalidOption(bibliotecaView));
+
 
         Menu menu = new Menu(menuList);
 

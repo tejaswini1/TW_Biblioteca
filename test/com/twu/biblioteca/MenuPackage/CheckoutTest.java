@@ -11,7 +11,7 @@ public class CheckoutTest {
     public void shouldTakeInputFromBibliotecView() {
         BibliotecaView bibliotecaView = mock(BibliotecaView.class);
         BooksController booksController = mock(BooksController.class);
-        Checkout checkout = new Checkout(bibliotecaView, booksController, new BookTokenizer());
+        Checkout checkout = new Checkout(bibliotecaView, booksController);
 
         checkout.execute();
 

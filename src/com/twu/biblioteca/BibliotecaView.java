@@ -18,7 +18,4 @@ public class BibliotecaView {
         return scanner.nextLine();
     }
 
-    public int readInt(){
-        return scanner.nextInt();
-    }
 }

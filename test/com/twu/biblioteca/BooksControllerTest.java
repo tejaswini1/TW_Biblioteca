@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.MenuPackage.BookTokenizer;
 import com.twu.biblioteca.MenuPackage.BooksController;
 import org.junit.Test;
 
@@ -20,7 +21,7 @@ public class BooksControllerTest {
         list.put(new Book("os", "e", "r"), false);
         Books books = new Books(list);
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
-        BooksController booksController = new BooksController(bibliotecaViewStub, books);
+        BooksController booksController = new BooksController(bibliotecaViewStub, books, new BookTokenizer());
 
         booksController.listAllBooks();
 
@@ -36,7 +37,7 @@ public class BooksControllerTest {
         HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
         list.put(new Book("java", "h", "s"), true);
         Books books = new Books(list);
-        BooksController booksController = new BooksController(bibliotecaViewStub, books);
+        BooksController booksController = new BooksController(bibliotecaViewStub, books, new BookTokenizer());
 
         booksController.checkout();
 
@@ -52,7 +53,7 @@ public class BooksControllerTest {
         HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
         list.put(new Book("java", "h", "s"), true);
         Books books = new Books(list);
-        BooksController booksController = new BooksController(bibliotecaViewStub, books);
+        BooksController booksController = new BooksController(bibliotecaViewStub, books, new BookTokenizer());
 
         booksController.checkout();
 

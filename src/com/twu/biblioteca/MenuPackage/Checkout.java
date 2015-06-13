@@ -6,12 +6,12 @@ public class Checkout implements MenuActionPerformable {
 
     private BibliotecaView bibliotecaView;
     private  BooksController booksController;
-    private BookTokenizer bookTokenizer;
 
-    public Checkout(BibliotecaView bibliotecaView, BooksController booksController, BookTokenizer bookTokenizer){
+
+    public Checkout(BibliotecaView bibliotecaView, BooksController booksController){
         this.bibliotecaView = bibliotecaView;
         this.booksController = booksController;
-        this.bookTokenizer = bookTokenizer;
+
     }
 
     public void execute(){
