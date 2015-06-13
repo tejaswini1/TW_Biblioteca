@@ -26,4 +26,10 @@ public class BooksController {
         else
             bibliotecaView.display(Messages.CHECKOUT_UNSUCCESSFUL);
     }
+
+    public void returnBook(){
+//        String nameOfBook = bibliotecaView.read();
+//        Book book = bookTokenizer.get(nameOfBook);
+
+    }
 }
