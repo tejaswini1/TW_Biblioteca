@@ -36,7 +36,7 @@ public class BooksTest {
     }
 
     @Test
-    public void shouldReturnBookIfItIsALreadyCheckedOut(){
+    public void shouldReturnTrueIfBookIsALreadyCheckedOut(){
         HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
         booksList.put(new Book("Java", "Jones", "21Feb2019"), true);
         booksList.put(new Book("Os", "Jones", "21Feb2019"), false);

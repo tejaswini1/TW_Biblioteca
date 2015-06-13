@@ -59,4 +59,20 @@ public class BooksControllerTest {
 
     }
 
+    @Test
+    public void shouldDisplaySuccessfultReturnMessageToBibliotecaView(){
+        BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
+        when(bibliotecaViewStub.read())
+                .thenReturn("java");
+        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
+        list.put(new Book("java", "h", "s"), false);
+        Books books = new Books(list);
+        BooksController booksController = new BooksController(bibliotecaViewStub, books, new BookTokenizer());
+
+        booksController.returnBook();
+
+        verify(bibliotecaViewStub,times(1)).display(Messages.RETURN_SUCCESSFUL);
+
+    }
+
 }
