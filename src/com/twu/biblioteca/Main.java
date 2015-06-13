@@ -22,6 +22,9 @@ public class Main {
 
         menuList.put(1, new ListAllBooks(booksController));
         menuList.put(2, new Quit());
+        menuList.put(3, new InvalidOption(bibliotecaView));
+        BookTokenizer bookTokenizer = new BookTokenizer();
+        Checkout checkout = new Checkout(bibliotecaView, booksController, bookTokenizer);
 
         Menu menu = new Menu(menuList);
 

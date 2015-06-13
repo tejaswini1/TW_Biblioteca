@@ -1,6 +1,7 @@
 package com.twu.biblioteca.MenuPackage;
 
 import com.twu.biblioteca.BibliotecaView;
+import com.twu.biblioteca.Book;
 import com.twu.biblioteca.Books;
 import com.twu.biblioteca.Messages;
 
@@ -20,8 +21,11 @@ public class BooksController {
         bibliotecaView.display(data);
     }
 
-    public void checkout(String nameOfBook){
-        if(books.checkout(nameOfBook))
+    public void checkout(){
+        String nameOfBook = bibliotecaView.read();
+        BookTokenizer bookTokenizer = new BookTokenizer();
+        Book book = bookTokenizer.get(nameOfBook);
+        if(books.checkout(book))
             bibliotecaView.display(Messages.CHECKOUT_SUCCESSFUL);
         else
             bibliotecaView.display(Messages.CHECKOUT_UNSUCCESSFUL);

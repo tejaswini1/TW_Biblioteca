@@ -18,9 +18,11 @@ public class Book {
         return name+", "+author+", "+yearOfPublication;
     }
 
-
-    public boolean equals(String o) {
-        return this.name.equals(o);
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof Book)
+            return (this.name.equals(((Book) o).name));
+        return false;
     }
 
 

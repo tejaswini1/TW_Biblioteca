@@ -31,12 +31,30 @@ public class BooksControllerTest {
     @Test
     public void shouldDisplayCheckoutMessageToBibliotecaView(){
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
+            when(bibliotecaViewStub.read())
+                    .thenReturn("java");
         HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
         list.put(new Book("java", "h", "s"), true);
         Books books = new Books(list);
         BooksController booksController = new BooksController(bibliotecaViewStub, books);
 
-        booksController.checkout("java");
+        booksController.checkout();
+
+        verify(bibliotecaViewStub,times(1)).display(Messages.CHECKOUT_SUCCESSFUL);
+
+    }
+
+    @Test
+    public void shouldDisplayUnsuccessfulCheckoutMessageToBibliotecaView(){
+        BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
+        when(bibliotecaViewStub.read())
+                .thenReturn("java");
+        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
+        list.put(new Book("java", "h", "s"), true);
+        Books books = new Books(list);
+        BooksController booksController = new BooksController(bibliotecaViewStub, books);
+
+        booksController.checkout();
 
         verify(bibliotecaViewStub,times(1)).display(Messages.CHECKOUT_SUCCESSFUL);
 

@@ -17,7 +17,7 @@ public class Menu {
 
     public void compute(int option) {
         if (menuItems.get(option) == null)
-            menuItems.get(2).execute();
+            menuItems.get(4).execute();
         else
             menuItems.get(option).execute();
     }
