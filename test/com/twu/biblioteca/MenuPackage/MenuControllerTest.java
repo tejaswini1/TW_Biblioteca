@@ -23,14 +23,5 @@ public class MenuControllerTest {
         verify(menu, times(1)).compute(anyInt());
     }
 
-    @Test
-    public void shouldDisplayMenuItems() {
-        BibliotecaView bibliotecaView = mock(BibliotecaView.class);
-        Menu menu = mock(Menu.class);
-        MenuController menuController = new MenuController(bibliotecaView, menu);
 
-        menuController.displayItems();
-
-        verify(bibliotecaView, times(1)).display(anyString());
-    }
 }

@@ -12,9 +12,7 @@ public class MenuController {
         this.menu = menu;
     }
 
-    public void displayItems(){
-        bibliotecaView.display(Messages.MENU_ITEMS);
-    }
+
 
     public void selectOption(){
         menu.compute(bibliotecaView.readInt());

@@ -18,5 +18,6 @@ public class BibliotecaApp {
 
     public void start(){
         bibliotecaView.display(Messages.WELCOME_MESSAGE);
+        bibliotecaView.display(Messages.MENU_ITEMS);
     }
 }
