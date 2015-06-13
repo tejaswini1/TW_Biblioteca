@@ -1,5 +1,8 @@
-package com.twu.biblioteca.MenuPackage;
+package com.twu.biblioteca;
 
+import com.twu.biblioteca.ListAllBooks;
+import com.twu.biblioteca.Menu;
+import com.twu.biblioteca.MenuActionPerformable;
 import org.junit.Test;
 import org.mockito.Mockito;
 import java.util.HashMap;

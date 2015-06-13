@@ -1,7 +1,4 @@
-package com.twu.biblioteca.MenuPackage;
-
-import com.twu.biblioteca.BibliotecaView;
-import com.twu.biblioteca.Messages;
+package com.twu.biblioteca;
 
 public class MenuController {
     private BibliotecaView bibliotecaView;

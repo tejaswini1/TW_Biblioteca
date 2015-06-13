@@ -1,6 +1,7 @@
-package com.twu.biblioteca.MenuPackage;
+package com.twu.biblioteca;
 
 import com.twu.biblioteca.Book;
+import com.twu.biblioteca.BookTokenizer;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

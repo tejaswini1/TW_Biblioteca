@@ -1,7 +1,6 @@
-package com.twu.biblioteca.MenuPackage;
+package com.twu.biblioteca;
 
-import com.twu.biblioteca.BibliotecaView;
-import com.twu.biblioteca.Messages;
+import com.twu.biblioteca.*;
 import org.junit.Test;
 
 import static org.mockito.Matchers.any;

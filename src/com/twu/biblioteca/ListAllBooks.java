@@ -1,4 +1,4 @@
-package com.twu.biblioteca.MenuPackage;
+package com.twu.biblioteca;
 
 
 public class ListAllBooks implements MenuActionPerformable {

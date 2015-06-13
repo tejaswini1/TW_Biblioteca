@@ -1,6 +1,8 @@
-package com.twu.biblioteca.MenuPackage;
+package com.twu.biblioteca;
 
 
+import com.twu.biblioteca.BooksController;
+import com.twu.biblioteca.ListAllBooks;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 

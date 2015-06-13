@@ -1,7 +1,7 @@
-package com.twu.biblioteca.MenuPackage;
+package com.twu.biblioteca;
 
 import com.twu.biblioteca.BibliotecaView;
-import com.twu.biblioteca.Messages;
+import com.twu.biblioteca.InvalidOption;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;
