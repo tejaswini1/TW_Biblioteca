@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // should only do I/O functionality
 public class BibliotecaView {
-    Scanner scanner;
+    private Scanner scanner;
 
     public BibliotecaView(Scanner scanner) {
         this.scanner = scanner;
