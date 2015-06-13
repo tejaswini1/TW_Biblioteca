@@ -15,7 +15,7 @@ public class CheckoutTest {
 
         checkout.execute();
 
-        verify(bibliotecaView, times(1)).read();
+        verify(booksController, times(1)).checkout();
     }
 
 }
