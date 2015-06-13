@@ -7,4 +7,6 @@ public interface Messages {
     String MENU_ITEMS = " 1] List of ALL Books \n 2] Checkout \n 3]Return \n 4] Quit";
     String CHECKOUT_SUCCESSFUL = "Thank you! Enjoy the book" ;
     String CHECKOUT_UNSUCCESSFUL = "The book is not available";
+    String RETURN_UNSUCCESSFUL = "Thank you for returning book";
+    String RETURN_SUCCESSFUL = "That is not a valid book to return";
 }

@@ -28,8 +28,13 @@ public class BooksController {
     }
 
     public void returnBook(){
-//        String nameOfBook = bibliotecaView.read();
-//        Book book = bookTokenizer.get(nameOfBook);
+        String nameOfBook = bibliotecaView.read();
+        Book book = bookTokenizer.get(nameOfBook);
+        if(books.returnBook(book))
+            bibliotecaView.display(Messages.RETURN_SUCCESSFUL);
+        else
+            bibliotecaView.display(Messages.RETURN_UNSUCCESSFUL);
+
 
     }
 }

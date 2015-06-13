@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
-        booksList.put(new Book("Java", "Jones", "21Feb2019"), true);
+        booksList.put(new Book("Java", "Jones", "21Feb2019"), false);
         booksList.put(new Book("CN", "Stalling", "3Oct1990"), true);
         Books books = new Books(booksList);
 
