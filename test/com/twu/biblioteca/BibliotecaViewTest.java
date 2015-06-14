@@ -47,6 +47,19 @@ public class BibliotecaViewTest {
         assertEquals("hello", actual);
     }
 
+
+    @Test
+    public void shouldReturnZeroForInvalidOption(){
+        inputStream = new ByteArrayInputStream("abcd".getBytes());
+        System.setIn(inputStream);
+
+        BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));
+
+        int actual = bibliotecaView.readInteger();
+
+        assertEquals(0, actual);
+    }
+
     @After
     public void cleanUpStreams() {
         System.setOut(null);

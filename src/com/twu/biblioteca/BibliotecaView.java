@@ -18,4 +18,11 @@ public class BibliotecaView {
         return scanner.nextLine();
     }
 
+    public int readInteger(){
+        try {
+            return Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
 }

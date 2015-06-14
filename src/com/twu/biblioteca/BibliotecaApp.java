@@ -16,6 +16,8 @@ public class BibliotecaApp {
     public void start(){
         bibliotecaView.display(Messages.WELCOME_MESSAGE);
         bibliotecaView.display(Messages.MENU_ITEMS);
-        menuController.selectOption(Integer.parseInt(bibliotecaView.read()));
+        menuController.selectOption(bibliotecaView.readInteger());
+
+
     }
 }
