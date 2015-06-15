@@ -23,4 +23,14 @@ public class BookTest {
 
         assertEquals(true, isEqual);
     }
+
+
+    @Test
+    public void shouldReturnFalseIfNameOfBookIsSame(){
+        Book book = new Book("abc", "xyz", "12Oct");
+
+        boolean isEqual = book.equals(new Book("xyz", "xyz", "12Oct"));
+
+        assertEquals(false, isEqual);
+    }
 }

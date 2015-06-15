@@ -20,8 +20,8 @@ public class Book {
 
     @Override
     public boolean equals(Object o) {
-        if(o instanceof Book)
-            return (this.name.equals(((Book) o).name));
+        if(o instanceof Book && (this.name.equals(((Book) o).name)))
+            return true;
         return false;
     }
 

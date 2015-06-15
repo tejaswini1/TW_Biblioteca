@@ -60,6 +60,21 @@ public class BibliotecaViewTest {
         assertEquals(0, actual);
     }
 
+    @Test
+    public void shouldTakeStringFromConsole(){
+        inputStream = new ByteArrayInputStream("abcd".getBytes());
+        System.setIn(inputStream);
+
+        BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));
+
+        String actual = bibliotecaView.read();
+
+        assertEquals("abcd", actual);
+    }
+
+
+
+
     @After
     public void cleanUpStreams() {
         System.setOut(null);

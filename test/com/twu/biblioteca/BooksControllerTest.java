@@ -49,13 +49,13 @@ public class BooksControllerTest {
         when(bibliotecaViewStub.read())
                 .thenReturn("java");
         HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
-        list.put(new Book("java", "h", "s"), true);
+        list.put(new Book("java", "h", "s"), false);
         Books books = new Books(list);
         BooksController booksController = new BooksController(bibliotecaViewStub, books, new BookTokenizer());
 
         booksController.checkout();
 
-        verify(bibliotecaViewStub,times(1)).display(Messages.CHECKOUT_SUCCESSFUL);
+        verify(bibliotecaViewStub,times(1)).display(Messages.CHECKOUT_UNSUCCESSFUL);
 
     }
 
@@ -72,6 +72,23 @@ public class BooksControllerTest {
         booksController.returnBook();
 
         verify(bibliotecaViewStub,times(1)).display(Messages.RETURN_SUCCESSFUL);
+
+    }
+
+
+    @Test
+    public void shouldDisplayUnSuccessfultReturnMessageToBibliotecaView(){
+        BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
+        when(bibliotecaViewStub.read())
+                .thenReturn("java");
+        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
+        list.put(new Book("java", "h", "s"), true);
+        Books books = new Books(list);
+        BooksController booksController = new BooksController(bibliotecaViewStub, books, new BookTokenizer());
+
+        booksController.returnBook();
+
+        verify(bibliotecaViewStub,times(1)).display(Messages.RETURN_UNSUCCESSFUL);
 
     }
 
