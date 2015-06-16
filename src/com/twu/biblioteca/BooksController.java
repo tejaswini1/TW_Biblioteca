@@ -3,29 +3,29 @@ package com.twu.biblioteca;
 public class BooksController {
 
     private BibliotecaView bibliotecaView ;
-    private Library library;
+    private LibrarySection librarySection;
 
 
-    public BooksController(BibliotecaView bibliotecaView, Library library) {
+    public BooksController(BibliotecaView bibliotecaView, LibrarySection librarySection) {
         this.bibliotecaView = bibliotecaView ;
-        this.library = library;
+        this.librarySection = librarySection;
 
     }
 
 
     public void listAllBooks() {
-        String data = library.toString();
+        String data = librarySection.toString();
         bibliotecaView.display(data);
     }
 
     public void checkout(){
         String nameOfBook = bibliotecaView.read();
-        bibliotecaView.display(library.checkout(nameOfBook));
+        bibliotecaView.display(librarySection.checkout(nameOfBook));
     }
 
     public void returnBook(){
         String nameOfBook = bibliotecaView.read();
-        bibliotecaView.display(library.returnBook(nameOfBook));
+        bibliotecaView.display(librarySection.returnBook(nameOfBook));
 
 
     }

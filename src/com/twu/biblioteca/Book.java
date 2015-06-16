@@ -2,7 +2,7 @@ package com.twu.biblioteca;
 
 // gives single book details
 
-public class Book {
+public class Book implements Item{
     private String author;
     private String name;
     private String yearOfPublication;
@@ -21,7 +21,7 @@ public class Book {
     }
 
 
-    public boolean equals(String otherBook) {
+    public boolean match(String otherBook) {
             return this.name.equals(otherBook);
 
     }

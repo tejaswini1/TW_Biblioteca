@@ -8,70 +8,20 @@ import static org.junit.Assert.assertEquals;
 
 public class LibrarySectionTest {
 
-//    @Test
-//    public void shouldReturnBookList(){
-//        HashMap<Book, Boolean> books = new HashMap<Book, Boolean>();
-//        books.put(new Book("Java", "Jones", "21Feb2019"), true);
-//        Library book = new Library(books);
-//
-//        String expectedList = "Java, Jones, 21Feb2019\n";
-//
-//        String actualList = book.toString();
-//
-//        assertEquals(expectedList, actualList);
-//    }
-//
-//    @Test
-//    public void shouldReturnBookListWhichareNotCheckedOut(){
-//        HashMap<Book, Boolean> books = new HashMap<Book, Boolean>();
-//        books.put(new Book("Java", "Jones", "21Feb2019"), true);
-//        books.put(new Book("Os", "Jones", "21Feb2019"), false);
-//        Library book = new Library(books);
-//
-//        String expectedList = "Java, Jones, 21Feb2019\n";
-//
-//        String actualList = book.toString();
-//
-//        assertEquals(expectedList, actualList);
-//    }
-//
-//    @Test
-//    public void shouldReturnTrueIfBookIsPresent(){
-//        HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
-//        booksList.put(new Book("Java", "Jones", "21Feb2019"), true);
-//        booksList.put(new Book("Os", "Jones", "21Feb2019"), false);
-//        Library library = new Library(booksList);
-//
-//        boolean actualBooleanValue = library.checkout("Os");
-//
-//
-//        assertEquals(false, actualBooleanValue);
-//    }
-//
-//    @Test
-//    public void shouldReturnTrueIfBookIsALreadyCheckedOut(){
-//        HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
-//        booksList.put(new Book("Java", "Jones", "21Feb2019"), true);
-//        booksList.put(new Book("Os", "Jones", "21Feb2019"), false);
-//        Library library = new Library(booksList);
-//
-//        boolean actualBooleanValue = library.returnBook("Os");
-//
-//
-//        assertEquals(true, actualBooleanValue);
-  //  }
+
 
     @Test
     public void shouldPrintSuccessfulMessageForSuccessfulCheckout(){
         ArrayList booksList = new ArrayList();
         booksList.add(new Book("Java", "Jones", "21Feb2019"));
         booksList.add(new Book("Os", "Jones", "21Feb2019"));
-        LibrarySection librarySection = new LibrarySection(booksList, new ArrayList<Book>());
-
-        String actualBooleanValue = librarySection.checkout("Os");
+        LibrarySection<Book> librarySection = new LibrarySection<Book>(booksList, new ArrayList<Book>());
 
 
-        assertEquals("Thank you! Enjoy the book", actualBooleanValue);
+        String actual = librarySection.checkout("Os");
+
+
+        assertEquals("Thank you! Enjoy the book", actual);
     }
 
     @Test
@@ -79,11 +29,26 @@ public class LibrarySectionTest {
         ArrayList booksList = new ArrayList();
         booksList.add(new Book("Java", "Jones", "21Feb2019"));
         booksList.add(new Book("Os", "Jones", "21Feb2019"));
-        LibrarySection librarySection = new LibrarySection(booksList, new ArrayList<Book>());
+        LibrarySection<Book> librarySection = new LibrarySection<Book>(booksList, new ArrayList<Book>());
 
         String actualBooleanValue = librarySection.checkout("cn");
 
 
         assertEquals("The book is not available", actualBooleanValue);
     }
+
+    @Test
+    public void shouldPrintSuccessfulMessageForSuccessfulReturn(){
+        ArrayList<Book> booksList = new ArrayList<Book>();
+        booksList.add(new Book("Java", "Jones", "21Feb2019"));
+        booksList.add(new Book("Os", "Jones", "21Feb2019"));
+        LibrarySection<Book> librarySection = new LibrarySection<Book>(new ArrayList<Book>(), booksList);
+
+
+        String actual = librarySection.returnBook("Java");
+
+
+        assertEquals("Thank you for returning book", actual);
+    }
+
 }

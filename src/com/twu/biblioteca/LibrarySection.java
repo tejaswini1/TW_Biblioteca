@@ -1,57 +1,60 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // gives all books details
-public class LibrarySection {
+public class LibrarySection<T extends Item> {
 
 
-    private ArrayList<Book> availableBooks;
-    private ArrayList<Book> issuedBooks;
+    private ArrayList<T> availableItems;
+    private ArrayList<T> issuedItems;
 
-    public LibrarySection(ArrayList<Book> availableBooks, ArrayList<Book> issuedBooks) {
+    public LibrarySection(ArrayList<T> availableItems, ArrayList<T> issuedItems) {
 
-        this.availableBooks = availableBooks;
-        this.issuedBooks = issuedBooks;
+        this.availableItems = availableItems;
+        this.issuedItems = issuedItems;
     }
 
     @Override
     public String toString() {
         String result = "";
-        for (Book book : availableBooks) {
-            result += book.toString() + "\n";
+        for (T item : availableItems) {
+            result += item.toString() + "\n";
         }
         return result;
     }
 
     public String checkout(String otherBook) {
-        ArrayList<Book> searchResult = search(otherBook, availableBooks);
-        for (Book book : searchResult) {
-            issuedBooks.add(book);
-            availableBooks.remove(book);
+        ArrayList<T> searchResult = search(otherBook, availableItems);
+        for (T book : searchResult) {
+            issuedItems.add(book);
+            availableItems.remove(book);
             return Messages.CHECKOUT_SUCCESSFUL;
         }
+
         return Messages.CHECKOUT_UNSUCCESSFUL;
     }
 
-    private ArrayList<Book> search(String otherBook, ArrayList<Book> bookList) {
-        ArrayList<Book> resultBooks = new ArrayList<Book>();
+    private ArrayList<T> search(String otherBook, ArrayList<T> bookList) {
+        ArrayList<T> resultBooks = new ArrayList<T>();
 
-        for (Book book : bookList) {
-            if (book.equals(otherBook))
-                resultBooks.add(book);
+        for (T item : bookList) {
+            if (item.match(otherBook)){
+                resultBooks.add(item);
+
+            }
         }
         return resultBooks;
     }
 
     public String returnBook(String otherBook) {
-        ArrayList<Book> searchResult = search(otherBook, issuedBooks);
-        for (Book book : searchResult) {
-            availableBooks.add(book);
-            issuedBooks.remove(book);
+        ArrayList<T> searchResult = search(otherBook, issuedItems);
+        for (T book : searchResult) {
+            availableItems.add(book);
+            issuedItems.remove(book);
             return Messages.RETURN_SUCCESSFUL;
         }
+
         return Messages.RETURN_UNSUCCESSFUL;
     }
 }

@@ -19,7 +19,7 @@ public class BookTest {
     public void shouldReturnTrueIfNameOfBookIsSame(){
         Book book = new Book("abc", "xyz", "12Oct");
 
-        boolean isEqual = book.equals("abc");
+        boolean isEqual = book.match("abc");
 
         assertEquals(true, isEqual);
     }
