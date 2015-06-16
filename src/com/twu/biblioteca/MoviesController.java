@@ -18,13 +18,18 @@ public class MoviesController {
 
     public void checkout(){
         String nameOfBook = bibliotecaView.read();
-        bibliotecaView.display(librarySection.checkout(nameOfBook));
+        if(librarySection.checkout(nameOfBook))
+            bibliotecaView.display(Messages.MOVIE_CHECKOUT_SUCCESSFUL);
+        else
+            bibliotecaView.display(Messages.MOVIE_RETURN_UNSUCCESSFUL);
     }
 
     public void returnMovie(){
         String nameOfBook = bibliotecaView.read();
-        bibliotecaView.display(librarySection.returnBook(nameOfBook));
-
+        if(librarySection.returnBook(nameOfBook))
+            bibliotecaView.display(Messages.MOVIE_RETURN_SUCCESSFUL);
+        else
+            bibliotecaView.display(Messages.MOVIE_RETURN_UNSUCCESSFUL);
 
     }
 }

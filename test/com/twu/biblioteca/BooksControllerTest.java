@@ -54,7 +54,7 @@ public class BooksControllerTest {
 
         booksController.checkout();
 
-        verify(bibliotecaViewStub, times(1)).display(Messages.CHECKOUT_UNSUCCESSFUL);
+        verify(bibliotecaViewStub, times(1)).display(Messages.BOOK_CHECKOUT_UNSUCCESSFUL);
 
     }
 
@@ -87,7 +87,7 @@ public class BooksControllerTest {
 
         booksController.returnBook();
 
-        verify(bibliotecaViewStub, times(1)).display(Messages.RETURN_UNSUCCESSFUL);
+        verify(bibliotecaViewStub, times(1)).display(Messages.BOOK_RETURN_UNSUCCESSFUL);
 
     }
 

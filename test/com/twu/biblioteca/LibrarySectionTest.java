@@ -18,10 +18,10 @@ public class LibrarySectionTest {
         LibrarySection<Book> librarySection = new LibrarySection<Book>(booksList, new ArrayList<Book>());
 
 
-        String actual = librarySection.checkout("Os");
+        boolean actual = librarySection.checkout("Os");
 
 
-        assertEquals("Thank you! Enjoy the book", actual);
+        assertEquals(true, actual);
     }
 
     @Test
@@ -31,10 +31,10 @@ public class LibrarySectionTest {
         booksList.add(new Book("Os", "Jones", "21Feb2019"));
         LibrarySection<Book> librarySection = new LibrarySection<Book>(booksList, new ArrayList<Book>());
 
-        String actualBooleanValue = librarySection.checkout("cn");
+        boolean actualBooleanValue = librarySection.checkout("cn");
 
 
-        assertEquals("The book is not available", actualBooleanValue);
+        assertEquals(false, actualBooleanValue);
     }
 
     @Test
@@ -45,10 +45,10 @@ public class LibrarySectionTest {
         LibrarySection<Book> librarySection = new LibrarySection<Book>(new ArrayList<Book>(), booksList);
 
 
-        String actual = librarySection.returnBook("Java");
+        boolean actual = librarySection.returnBook("Java");
 
 
-        assertEquals("Thank you for returning book", actual);
+        assertEquals(true, actual);
     }
 
 }

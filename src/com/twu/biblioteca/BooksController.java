@@ -20,13 +20,18 @@ public class BooksController {
 
     public void checkout(){
         String nameOfBook = bibliotecaView.read();
-        bibliotecaView.display(librarySection.checkout(nameOfBook));
+        if(librarySection.checkout(nameOfBook))
+             bibliotecaView.display(Messages.BOOK_CHECKOUT_SUCCESSFUL);
+        else
+            bibliotecaView.display(Messages.BOOK_CHECKOUT_UNSUCCESSFUL);
     }
 
     public void returnBook(){
         String nameOfBook = bibliotecaView.read();
-        bibliotecaView.display(librarySection.returnBook(nameOfBook));
-
+        if(librarySection.returnBook(nameOfBook))
+            bibliotecaView.display(Messages.BOOK_RETURN_SUCCESSFUL);
+        else
+            bibliotecaView.display(Messages.BOOK_RETURN_UNSUCCESSFUL);
 
     }
 }

@@ -24,15 +24,15 @@ public class LibrarySection<T extends Item> {
         return result;
     }
 
-    public String checkout(String otherBook) {
+    public boolean checkout(String otherBook) {
         ArrayList<T> searchResult = search(otherBook, availableItems);
         for (T book : searchResult) {
             issuedItems.add(book);
             availableItems.remove(book);
-            return Messages.CHECKOUT_SUCCESSFUL;
+            return true;
         }
 
-        return Messages.CHECKOUT_UNSUCCESSFUL;
+        return false;
     }
 
     private ArrayList<T> search(String otherBook, ArrayList<T> bookList) {
@@ -47,14 +47,14 @@ public class LibrarySection<T extends Item> {
         return resultBooks;
     }
 
-    public String returnBook(String otherBook) {
+    public boolean returnBook(String otherBook) {
         ArrayList<T> searchResult = search(otherBook, issuedItems);
         for (T book : searchResult) {
             availableItems.add(book);
             issuedItems.remove(book);
-            return Messages.RETURN_SUCCESSFUL;
+            return true;
         }
 
-        return Messages.RETURN_UNSUCCESSFUL;
+        return false;
     }
 }
