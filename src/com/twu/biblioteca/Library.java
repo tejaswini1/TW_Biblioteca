@@ -3,10 +3,10 @@ package com.twu.biblioteca;
 import java.util.HashMap;
 
 // gives all books details
-public class Books {
+public class Library {
     HashMap<Book, Boolean> books = new HashMap<Book, Boolean>();
 
-    public Books(HashMap<Book, Boolean> books) {
+    public Library(HashMap<Book, Boolean> books) {
         this.books = books;
     }
 
@@ -20,7 +20,7 @@ public class Books {
         return booksList;
     }
 
-    public boolean checkout(Book otherBook) {
+    public boolean checkout(String otherBook) {
         for (Book book : books.keySet()) {
             if (book.equals(otherBook) && books.get(book) == true) {
                 books.put(book, false);
@@ -30,7 +30,7 @@ public class Books {
         return false;
     }
 
-    public boolean returnBook(Book otherBook) {
+    public boolean returnBook(String otherBook) {
         for (Book book : books.keySet()) {
             if (book.equals(otherBook) && books.get(book) == false) {
                 books.put(book, true);

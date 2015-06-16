@@ -6,13 +6,13 @@ import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
-public class BooksTest {
+public class LibraryTest {
 
     @Test
     public void shouldReturnBookList(){
         HashMap<Book, Boolean> books = new HashMap<Book, Boolean>();
         books.put(new Book("Java", "Jones", "21Feb2019"), true);
-        Books book = new Books(books);
+        Library book = new Library(books);
 
         String expectedList = "Java, Jones, 21Feb2019\n";
 
@@ -26,7 +26,7 @@ public class BooksTest {
         HashMap<Book, Boolean> books = new HashMap<Book, Boolean>();
         books.put(new Book("Java", "Jones", "21Feb2019"), true);
         books.put(new Book("Os", "Jones", "21Feb2019"), false);
-        Books book = new Books(books);
+        Library book = new Library(books);
 
         String expectedList = "Java, Jones, 21Feb2019\n";
 
@@ -40,9 +40,9 @@ public class BooksTest {
         HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
         booksList.put(new Book("Java", "Jones", "21Feb2019"), true);
         booksList.put(new Book("Os", "Jones", "21Feb2019"), false);
-        Books books = new Books(booksList);
+        Library library = new Library(booksList);
 
-        boolean actualBooleanValue = books.checkout(new Book("Os", "Jones", "21Feb2019"));
+        boolean actualBooleanValue = library.checkout("Os");
 
 
         assertEquals(false, actualBooleanValue);
@@ -53,9 +53,9 @@ public class BooksTest {
         HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
         booksList.put(new Book("Java", "Jones", "21Feb2019"), true);
         booksList.put(new Book("Os", "Jones", "21Feb2019"), false);
-        Books books = new Books(booksList);
+        Library library = new Library(booksList);
 
-        boolean actualBooleanValue = books.returnBook(new Book("Os", "Jones", "21Feb2019"));
+        boolean actualBooleanValue = library.returnBook("Os");
 
 
         assertEquals(true, actualBooleanValue);
@@ -66,9 +66,9 @@ public class BooksTest {
         HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
         booksList.put(new Book("Java", "Jones", "21Feb2019"), true);
         booksList.put(new Book("Os", "Jones", "21Feb2019"), true);
-        Books books = new Books(booksList);
+        Library library = new Library(booksList);
 
-        boolean actualBooleanValue = books.returnBook(new Book("Os", "Jones", "21Feb2019"));
+        boolean actualBooleanValue = library.returnBook("Os");
 
 
         assertEquals(false, actualBooleanValue);

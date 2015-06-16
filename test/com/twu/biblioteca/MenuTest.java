@@ -1,8 +1,5 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.ListAllBooks;
-import com.twu.biblioteca.Menu;
-import com.twu.biblioteca.MenuActionPerformable;
 import org.junit.Test;
 import org.mockito.Mockito;
 import java.util.HashMap;
@@ -29,16 +26,16 @@ public class MenuTest {
     public void shouldCallInvalidClassMethodIfUserSpecifiesWrongOption(){
         HashMap<Integer, MenuActionPerformable> menuItems = new HashMap<Integer, MenuActionPerformable>();
         ListAllBooks listAllBooks = mock(ListAllBooks.class);
-        Quit quit = mock(Quit.class);
+        InvalidOption invalidOptionStub = mock(InvalidOption.class);
         menuItems.put(1, listAllBooks);
-        menuItems.put(4, quit);
+        menuItems.put(4, invalidOptionStub);
 
         Menu menu = new Menu(menuItems);
 
 
         menu.compute(7);
 
-        verify(quit, Mockito.times(1)).execute();
+        verify(invalidOptionStub, Mockito.times(1)).execute();
     }
 
 

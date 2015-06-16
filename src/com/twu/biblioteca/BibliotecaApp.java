@@ -6,17 +6,20 @@ public class BibliotecaApp {
     private BooksController booksController;
     private MenuController menuController;
 
-    public BibliotecaApp(BibliotecaView bibliotecaView, BooksController booksController, MenuController menuController){
+    public BibliotecaApp(BibliotecaView bibliotecaView, BooksController booksController, MenuController menuController) {
 
         this.bibliotecaView = bibliotecaView;
         this.booksController = booksController;
         this.menuController = menuController;
     }
 
-    public void start(){
+    public void start() {
         bibliotecaView.display(Messages.WELCOME_MESSAGE);
-        bibliotecaView.display(Messages.MENU_ITEMS);
-        menuController.selectOption(bibliotecaView. readInteger());
+
+        //do {
+            bibliotecaView.display(Messages.MENU_ITEMS);
+            menuController.selectOption(bibliotecaView.readInteger());
+        //} while (bibliotecaView.readInteger() != 4);
 
 
     }

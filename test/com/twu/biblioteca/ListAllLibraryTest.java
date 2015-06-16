@@ -6,7 +6,7 @@ import com.twu.biblioteca.ListAllBooks;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
-public class ListAllBooksTest {
+public class ListAllLibraryTest {
 
 
     @Test
