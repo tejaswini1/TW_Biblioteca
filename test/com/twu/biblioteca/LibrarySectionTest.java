@@ -3,11 +3,10 @@ package com.twu.biblioteca;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 
-public class LibraryTest {
+public class LibrarySectionTest {
 
 //    @Test
 //    public void shouldReturnBookList(){
@@ -67,11 +66,24 @@ public class LibraryTest {
         ArrayList booksList = new ArrayList();
         booksList.add(new Book("Java", "Jones", "21Feb2019"));
         booksList.add(new Book("Os", "Jones", "21Feb2019"));
-        Library library = new Library(booksList, new ArrayList<Book>());
+        LibrarySection librarySection = new LibrarySection(booksList, new ArrayList<Book>());
 
-        String actualBooleanValue = library.checkout("Os");
+        String actualBooleanValue = librarySection.checkout("Os");
 
 
         assertEquals("Thank you! Enjoy the book", actualBooleanValue);
+    }
+
+    @Test
+    public void shouldPrintUnSuccessfulMessageForUnSuccessfulCheckout(){
+        ArrayList booksList = new ArrayList();
+        booksList.add(new Book("Java", "Jones", "21Feb2019"));
+        booksList.add(new Book("Os", "Jones", "21Feb2019"));
+        LibrarySection librarySection = new LibrarySection(booksList, new ArrayList<Book>());
+
+        String actualBooleanValue = librarySection.checkout("cn");
+
+
+        assertEquals("The book is not available", actualBooleanValue);
     }
 }
