@@ -10,7 +10,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
-public class LibrarySectionControllerTest {
+public class BooksControllerTest {
 
     @Test
     public void shouldCallDisplayMethodOfBibliotecaView() {
@@ -38,7 +38,7 @@ public class LibrarySectionControllerTest {
 
         booksController.checkout();
 
-        verify(bibliotecaViewStub, times(1)).display(Messages.CHECKOUT_SUCCESSFUL);
+        verify(bibliotecaViewStub, times(1)).display(anyString());
 
     }
 
@@ -70,7 +70,7 @@ public class LibrarySectionControllerTest {
 
         booksController.returnBook();
 
-        verify(bibliotecaViewStub, times(1)).display(Messages.RETURN_SUCCESSFUL);
+        verify(bibliotecaViewStub, times(1)).display(anyString());
 
     }
 
