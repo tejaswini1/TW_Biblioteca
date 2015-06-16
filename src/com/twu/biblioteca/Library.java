@@ -1,43 +1,57 @@
 package com.twu.biblioteca;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 // gives all books details
 public class Library {
-    HashMap<Book, Boolean> books = new HashMap<Book, Boolean>();
 
-    public Library(HashMap<Book, Boolean> books) {
-        this.books = books;
+
+    private ArrayList<Book> availableBooks;
+    private ArrayList<Book> issuedBooks;
+
+    public Library(ArrayList<Book> availableBooks, ArrayList<Book> issuedBooks) {
+
+        this.availableBooks = availableBooks;
+        this.issuedBooks = issuedBooks;
     }
 
     @Override
     public String toString() {
-        String booksList = "";
-        for (Book book : books.keySet()) {
-            if (books.get(book) == true)
-                booksList += book + "\n";
+        String result = "";
+        for (Book book : availableBooks) {
+            result += book.toString();
         }
-        return booksList;
+        return result;
     }
 
-    public boolean checkout(String otherBook) {
-        for (Book book : books.keySet()) {
-            if (book.equals(otherBook) && books.get(book) == true) {
-                books.put(book, false);
-                return true;
-            }
+    public String checkout(String otherBook) {
+        ArrayList<Book>  searchResult = search(otherBook, availableBooks);
+        for(Book book : searchResult){
+            issuedBooks.add(book);
+            availableBooks.remove(book);
+            return Messages.CHECKOUT_SUCCESSFUL;
         }
-        return false;
+        return Messages.CHECKOUT_UNSUCCESSFUL;
     }
 
-    public boolean returnBook(String otherBook) {
-        for (Book book : books.keySet()) {
-            if (book.equals(otherBook) && books.get(book) == false) {
-                books.put(book, true);
-                return true;
-            }
+    private ArrayList<Book> search(String otherBook, ArrayList<Book> bookList) {
+        ArrayList<Book> resultBooks = new ArrayList<Book>();
 
+        for (Book book : bookList) {
+            if(book.equals(otherBook))
+                resultBooks.add(book);
         }
-        return false;
+        return resultBooks;
+    }
+
+    public String returnBook(String otherBook) {
+        ArrayList<Book>  searchResult = search(otherBook, issuedBooks);
+        for(Book book : searchResult){
+            availableBooks.add(book);
+            issuedBooks.remove(book);
+            return Messages.RETURN_SUCCESSFUL;
+        }
+        return Messages.CHECKOUT_UNSUCCESSFUL;
     }
 }

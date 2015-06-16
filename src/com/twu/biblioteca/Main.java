@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -7,10 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        HashMap<Book, Boolean> booksList = new HashMap<Book, Boolean>();
-        booksList.put(new Book("Java", "Jones", "21Feb2019"), false);
-        booksList.put(new Book("CN", "Stalling", "3Oct1990"), true);
-        Library library = new Library(booksList);
+        ArrayList<Book> booksList = new ArrayList<Book>();
+        booksList.add(new Book("Java", "Jones", "21Feb2019"));
+        booksList.add(new Book("CN", "Stalling", "3Oct1990"));
+        Library library = new Library(booksList, new ArrayList<Book>());
 
         BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));
 

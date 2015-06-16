@@ -3,6 +3,7 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.mockito.Mockito.*;
@@ -14,10 +15,10 @@ public class LibraryControllerTest {
 
     @Test
     public void shouldCallDisplayMethodOfBibliotecaView(){
-        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
-        list.put(new Book("java","f","r"),true);
-        list.put(new Book("os", "e", "r"), false);
-        Library library = new Library(list);
+        ArrayList<Book> list = new ArrayList<Book>();
+        list.add(new Book("java", "f", "r"));
+        list.add(new Book("os", "e", "r"));
+        Library library = new Library(list, new ArrayList<Book>());
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
         BooksController booksController = new BooksController(bibliotecaViewStub, library);
 
@@ -32,9 +33,9 @@ public class LibraryControllerTest {
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
             when(bibliotecaViewStub.read())
                     .thenReturn("java");
-        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
-        list.put(new Book("java", "h", "s"), true);
-        Library library = new Library(list);
+        ArrayList<Book> list = new ArrayList<Book>();
+        list.add(new Book("java", "h", "s"));
+        Library library = new Library(list, new ArrayList<Book>());
         BooksController booksController = new BooksController(bibliotecaViewStub, library);
 
         booksController.checkout();
@@ -48,9 +49,9 @@ public class LibraryControllerTest {
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
         when(bibliotecaViewStub.read())
                 .thenReturn("java");
-        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
-        list.put(new Book("java", "h", "s"), false);
-        Library library = new Library(list);
+        ArrayList<Book> list = new ArrayList<Book>();
+        list.add(new Book("java", "h", "s"));
+        Library library = new Library(list, new ArrayList<Book>());
         BooksController booksController = new BooksController(bibliotecaViewStub, library);
 
         booksController.checkout();
@@ -64,9 +65,9 @@ public class LibraryControllerTest {
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
         when(bibliotecaViewStub.read())
                 .thenReturn("java");
-        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
-        list.put(new Book("java", "h", "s"), false);
-        Library library = new Library(list);
+        ArrayList<Book> list = new ArrayList<Book>();
+        list.add(new Book("java", "h", "s"));
+        Library library = new Library(list, new ArrayList<Book>());
         BooksController booksController = new BooksController(bibliotecaViewStub, library);
 
         booksController.returnBook();
@@ -81,9 +82,9 @@ public class LibraryControllerTest {
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
         when(bibliotecaViewStub.read())
                 .thenReturn("java");
-        HashMap<Book, Boolean> list = new HashMap<Book, Boolean>();
-        list.put(new Book("java", "h", "s"), true);
-        Library library = new Library(list);
+        ArrayList<Book> list = new ArrayList<Book>();
+        list.add(new Book("java", "h", "s"));
+        Library library = new Library(list, new ArrayList<Book>());
         BooksController booksController = new BooksController(bibliotecaViewStub, library);
 
         booksController.returnBook();
