@@ -1,9 +1,11 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.BooksController;
-import com.twu.biblioteca.ListAllBooks;
+
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.mockito.Mockito.*;
 
 public class ListAllBooksTest {
@@ -11,12 +13,16 @@ public class ListAllBooksTest {
 
     @Test
     public void shouldCallMethodToListBooksOnConsole() {
-        BooksController booksController = mock(BooksController.class);
-        ListAllBooks listAllBooks = new ListAllBooks(booksController);
+        ItemController itemsController = mock(ItemController.class);
+        ArrayList<Book> availableBook = new ArrayList<Book>();
+        availableBook.add(new Book("book1", "author1", "12Feb"));
+        availableBook.add(new Book("book2", "author2", "13Jan"));
+        LibrarySection<Book> librarySection = new LibrarySection<Book>(availableBook, new ArrayList<Book>());
+        ListAllBooks listAllBooks = new ListAllBooks(itemsController, librarySection);
 
         listAllBooks.execute();
 
-        verify(booksController, times(1)).listAllBooks();
+        verify(itemsController, times(1)).listAllItems(librarySection);
     }
 
 

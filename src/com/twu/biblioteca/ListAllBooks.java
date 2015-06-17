@@ -2,14 +2,16 @@ package com.twu.biblioteca;
 
 
 public class ListAllBooks implements MenuActionPerformable {
-    private BooksController booksController;
+    private ItemController itemController;
+    private LibrarySection librarySection;
 
-    public ListAllBooks(BooksController booksController) {
-        this.booksController = booksController;
+    public ListAllBooks(ItemController itemsController, LibrarySection librarySection) {
+        this.itemController = itemsController;
+        this.librarySection = librarySection;
     }
 
 
     public void execute() {
-        booksController.listAllBooks();
+        itemController.listAllItems(librarySection);
     }
 }

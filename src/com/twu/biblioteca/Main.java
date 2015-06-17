@@ -21,14 +21,14 @@ public class Main {
         LibrarySection<Movie> librarySectionMovies = new LibrarySection<Movie>(moviesList, new ArrayList<Movie>());
 
         BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));
-        BooksController booksController = new BooksController(bibliotecaView, librarySectionBooks);
         MoviesController moviesController = new MoviesController(bibliotecaView, librarySectionMovies);
+        ItemController itemController = new ItemController(bibliotecaView);
 
         HashMap<Integer, MenuActionPerformable> menuList = new HashMap<Integer, MenuActionPerformable>();
 
-        menuList.put(1, new ListAllBooks(booksController));
-        menuList.put(2, new CheckoutBook(booksController));
-        menuList.put(3, new ReturnBook(booksController));
+        menuList.put(1, new ListAllBooks(itemController, librarySectionBooks));
+        menuList.put(2, new CheckoutBook(itemController, librarySectionBooks));
+        menuList.put(3, new ReturnBook(itemController, librarySectionBooks));
         menuList.put(4, new ListAllMovies(moviesController));
         menuList.put(5, new CheckoutMovie(moviesController));
         menuList.put(6, new ReturnMovie(moviesController));
