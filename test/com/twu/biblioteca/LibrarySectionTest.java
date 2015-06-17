@@ -18,10 +18,10 @@ public class LibrarySectionTest {
         LibrarySection<Book> librarySection = new LibrarySection<Book>(booksList, new ArrayList<Book>());
 
 
-        boolean actual = librarySection.checkout("Os");
+        String actual = librarySection.checkout("Os", Messages.BOOK_CHECKOUT_SUCCESSFUL, Messages.BOOK_CHECKOUT_UNSUCCESSFUL);
 
 
-        assertEquals(true, actual);
+        assertEquals(Messages.BOOK_CHECKOUT_SUCCESSFUL, actual);
     }
 
     @Test
@@ -31,10 +31,10 @@ public class LibrarySectionTest {
         booksList.add(new Book("Os", "Jones", "21Feb2019"));
         LibrarySection<Book> librarySection = new LibrarySection<Book>(booksList, new ArrayList<Book>());
 
-        boolean actualBooleanValue = librarySection.checkout("cn");
+        String actualBooleanValue = librarySection.checkout("cn", Messages.BOOK_CHECKOUT_SUCCESSFUL, Messages.BOOK_CHECKOUT_UNSUCCESSFUL);
 
 
-        assertEquals(false, actualBooleanValue);
+        assertEquals(Messages.BOOK_CHECKOUT_UNSUCCESSFUL, actualBooleanValue);
     }
 
     @Test
@@ -45,10 +45,10 @@ public class LibrarySectionTest {
         LibrarySection<Book> librarySection = new LibrarySection<Book>(new ArrayList<Book>(), booksList);
 
 
-        boolean actual = librarySection.returnItem("Java");
+        String actual = librarySection.returnItem("Java", Messages.BOOK_RETURN_SUCCESSFUL, Messages.BOOK_RETURN_UNSUCCESSFUL);
 
 
-        assertEquals(true, actual);
+        assertEquals(Messages.BOOK_RETURN_SUCCESSFUL, actual);
     }
 
 
@@ -60,10 +60,10 @@ public class LibrarySectionTest {
         LibrarySection<Book> librarySection = new LibrarySection<Book>(new ArrayList<Book>(), booksList);
 
 
-        boolean actual = librarySection.returnItem("cn");
+        String actual = librarySection.returnItem("cn", Messages.BOOK_RETURN_SUCCESSFUL, Messages.BOOK_RETURN_UNSUCCESSFUL);
 
 
-        assertEquals(false, actual);
+        assertEquals(Messages.BOOK_RETURN_UNSUCCESSFUL, actual);
     }
 
 

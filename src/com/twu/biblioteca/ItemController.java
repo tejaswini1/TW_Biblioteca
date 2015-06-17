@@ -16,17 +16,11 @@ public class ItemController {
 
     public void checkout(LibrarySection librarySection, String successMessage, String unsuccesfulMessage){
         String nameOfItem = bibliotecaView.read();
-        if(librarySection.checkout(nameOfItem))
-            bibliotecaView.display(successMessage);
-        else
-            bibliotecaView.display(unsuccesfulMessage);
+            bibliotecaView.display(librarySection.checkout(nameOfItem, successMessage, unsuccesfulMessage));
     }
 
     public void returnItem(LibrarySection librarySection, String successMessage, String unsuccessfulMessge){
         String nameOfItem = bibliotecaView.read();
-        if(librarySection.returnItem(nameOfItem))
-            bibliotecaView.display(successMessage);
-        else
-            bibliotecaView.display(unsuccessfulMessge);
+            bibliotecaView.display(librarySection.returnItem(nameOfItem, successMessage, unsuccessfulMessge));
     }
 }
