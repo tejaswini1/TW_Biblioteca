@@ -27,18 +27,19 @@ public class Main {
         HashMap<Integer, MenuActionPerformable> menuList = new HashMap<Integer, MenuActionPerformable>();
 
         menuList.put(1, new ListAllBooks(booksController));
-        menuList.put(2, new Checkout(bibliotecaView, booksController));
+        menuList.put(2, new CheckoutBook(bibliotecaView, booksController));
         menuList.put(3, new ReturnBook(booksController));
         menuList.put(4, new ListAllMovies(moviesController));
-        menuList.put(5, new Quit());
-        menuList.put(6, new InvalidOption(bibliotecaView));
+        menuList.put(5, new CheckoutMovie(bibliotecaView, moviesController));
+        menuList.put(6, new Quit());
+        menuList.put(7, new InvalidOption(bibliotecaView));
 
 
         Menu menu = new Menu(menuList);
 
         MenuController menuController = new MenuController(bibliotecaView, menu);
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, booksController, menuController);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, menuController);
 
         bibliotecaApp.start();
     }

@@ -33,7 +33,7 @@ public class MenuTest {
         Menu menu = new Menu(menuItems);
 
 
-        menu.compute(7);
+        menu.compute(4);
 
         verify(invalidOptionStub, Mockito.times(1)).execute();
     }

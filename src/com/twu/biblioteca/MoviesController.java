@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-
 public class MoviesController {
     private BibliotecaView bibliotecaView;
     private LibrarySection<Movie> librarySection;
@@ -21,15 +19,8 @@ public class MoviesController {
         if(librarySection.checkout(nameOfBook))
             bibliotecaView.display(Messages.MOVIE_CHECKOUT_SUCCESSFUL);
         else
-            bibliotecaView.display(Messages.MOVIE_RETURN_UNSUCCESSFUL);
+            bibliotecaView.display(Messages.MOVIE_CHECKOUT_UNSUCCESSFUL);
     }
 
-    public void returnMovie(){
-        String nameOfBook = bibliotecaView.read();
-        if(librarySection.returnBook(nameOfBook))
-            bibliotecaView.display(Messages.MOVIE_RETURN_SUCCESSFUL);
-        else
-            bibliotecaView.display(Messages.MOVIE_RETURN_UNSUCCESSFUL);
 
-    }
 }
