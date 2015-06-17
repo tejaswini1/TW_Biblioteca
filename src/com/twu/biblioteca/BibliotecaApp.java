@@ -20,7 +20,7 @@ public class BibliotecaApp {
             option = bibliotecaView.readInteger();
             menuController.selectOption(option);
 
-        } while (option != 6);
+        } while (option != 7);
 
 
     }

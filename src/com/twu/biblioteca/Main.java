@@ -15,8 +15,8 @@ public class Main {
 
 
         ArrayList<Movie> moviesList = new ArrayList<Movie>();
-        moviesList.add(new Movie("movie1", "1991", "author1", 3));
-        moviesList.add(new Movie("movie2", "1993", "author2", 4));
+        moviesList.add(new Movie("movie1", "1991", "author1", "3"));
+        moviesList.add(new Movie("movie2", "1993", "author2", "4"));
 
         LibrarySection<Movie> librarySectionMovies = new LibrarySection<Movie>(moviesList, new ArrayList<Movie>());
 
@@ -27,12 +27,13 @@ public class Main {
         HashMap<Integer, MenuActionPerformable> menuList = new HashMap<Integer, MenuActionPerformable>();
 
         menuList.put(1, new ListAllBooks(booksController));
-        menuList.put(2, new CheckoutBook(bibliotecaView, booksController));
+        menuList.put(2, new CheckoutBook(booksController));
         menuList.put(3, new ReturnBook(booksController));
         menuList.put(4, new ListAllMovies(moviesController));
-        menuList.put(5, new CheckoutMovie(bibliotecaView, moviesController));
-        menuList.put(6, new Quit());
-        menuList.put(7, new InvalidOption(bibliotecaView));
+        menuList.put(5, new CheckoutMovie(moviesController));
+        menuList.put(6, new ReturnMovie(moviesController));
+        menuList.put(7, new Quit());
+        menuList.put(8, new InvalidOption(bibliotecaView));
 
 
         Menu menu = new Menu(menuList);

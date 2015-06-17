@@ -22,18 +22,20 @@ public class MenuTest {
         verify(listAllBooks, Mockito.times(1)).execute();
     }
 
+
+
     @Test
     public void shouldCallInvalidClassMethodIfUserSpecifiesWrongOption(){
         HashMap<Integer, MenuActionPerformable> menuItems = new HashMap<Integer, MenuActionPerformable>();
         ListAllBooks listAllBooks = mock(ListAllBooks.class);
         InvalidOption invalidOptionStub = mock(InvalidOption.class);
         menuItems.put(1, listAllBooks);
-        menuItems.put(4, invalidOptionStub);
+        menuItems.put(7, invalidOptionStub);
 
         Menu menu = new Menu(menuItems);
 
 
-        menu.compute(4);
+        menu.compute(8);
 
         verify(invalidOptionStub, Mockito.times(1)).execute();
     }

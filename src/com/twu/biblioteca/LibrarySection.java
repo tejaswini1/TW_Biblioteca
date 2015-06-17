@@ -17,7 +17,7 @@ public class LibrarySection<T extends Item> {
 
     @Override
     public String toString() {
-        String result = "";
+        String result = new String();
         for (T item : availableItems) {
             result += item.toString() + "\n";
         }
@@ -47,7 +47,7 @@ public class LibrarySection<T extends Item> {
         return resultBooks;
     }
 
-    public boolean returnBook(String otherBook) {
+    public boolean returnItem(String otherBook) {
         ArrayList<T> searchResult = search(otherBook, issuedItems);
         for (T book : searchResult) {
             availableItems.add(book);

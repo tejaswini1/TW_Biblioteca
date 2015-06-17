@@ -7,10 +7,9 @@ import static org.mockito.Mockito.verify;
 
 public class CheckoutBookTest {
     @Test
-    public void shouldTakeInputFromBibliotecView() {
-        BibliotecaView bibliotecaView = mock(BibliotecaView.class);
+    public void shouldCallExecuteMethodOfBooksController() {
         BooksController booksController = mock(BooksController.class);
-        CheckoutBook checkoutBook = new CheckoutBook(bibliotecaView, booksController);
+        CheckoutBook checkoutBook = new CheckoutBook( booksController);
 
         checkoutBook.execute();
 

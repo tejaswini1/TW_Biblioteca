@@ -28,7 +28,7 @@ public class BooksController {
 
     public void returnBook(){
         String nameOfBook = bibliotecaView.read();
-        if(librarySection.returnBook(nameOfBook))
+        if(librarySection.returnItem(nameOfBook))
             bibliotecaView.display(Messages.BOOK_RETURN_SUCCESSFUL);
         else
             bibliotecaView.display(Messages.BOOK_RETURN_UNSUCCESSFUL);

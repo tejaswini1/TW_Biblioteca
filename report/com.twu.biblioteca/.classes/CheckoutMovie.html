@@ -5,7 +5,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html id="htmlId">
 <head>
-  <title>Coverage Report :: Quit</title>
+  <title>Coverage Report :: CheckoutMovie</title>
   <style type="text/css">
     @import "../../.css/coverage.css";
   </style>
@@ -20,7 +20,7 @@
     [ <a href="../index.html">com.twu.biblioteca</a> ]
 </div>
 
-<h1>Coverage Summary for Class: Quit (com.twu.biblioteca)</h1>
+<h1>Coverage Summary for Class: CheckoutMovie (com.twu.biblioteca)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -39,7 +39,7 @@
 </th>
 </tr>
 <tr>
-  <td class="name">Quit</td>
+  <td class="name">CheckoutMovie</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (2/ 2)
+    (5/ 5)
   </span>
 </td>
 </tr>
@@ -74,13 +74,20 @@
 
 <div class="sourceCode"><i>1</i>&nbsp;package com.twu.biblioteca;
 <i>2</i>&nbsp;
-<b class="fc"><i>3</i>&nbsp;public class Quit implements MenuActionPerformable {</b>
+<i>3</i>&nbsp;public class CheckoutMovie implements MenuActionPerformable{
 <i>4</i>&nbsp;
-<i>5</i>&nbsp;
-<i>6</i>&nbsp;    @Override
-<i>7</i>&nbsp;    public void execute() {
-<b class="fc"><i>8</i>&nbsp;        System.exit(0);}</b>
-<i>9</i>&nbsp;}
+<i>5</i>&nbsp;    private MoviesController moviesController;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;
+<b class="fc"><i>8</i>&nbsp;    public CheckoutMovie(MoviesController moviesController){</b>
+<b class="fc"><i>9</i>&nbsp;        this.moviesController = moviesController;</b>
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    }</b>
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    public void execute(){
+<b class="fc"><i>14</i>&nbsp;        moviesController.checkout();</b>
+<b class="fc"><i>15</i>&nbsp;    }</b>
+<i>16</i>&nbsp;}
 </div>
 </div>
 

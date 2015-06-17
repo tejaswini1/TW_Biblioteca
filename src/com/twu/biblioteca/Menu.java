@@ -19,6 +19,4 @@ public class Menu {
         else
             menuItems.get(option).execute();
     }
-
-
 }

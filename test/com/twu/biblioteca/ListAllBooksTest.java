@@ -6,11 +6,11 @@ import com.twu.biblioteca.ListAllBooks;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 
-public class ListAllLibrarySectionTest {
+public class ListAllBooksTest {
 
 
     @Test
-    public void shouldListBooksOnConsole() {
+    public void shouldCallMethodToListBooksOnConsole() {
         BooksController booksController = mock(BooksController.class);
         ListAllBooks listAllBooks = new ListAllBooks(booksController);
 

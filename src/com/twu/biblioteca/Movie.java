@@ -5,9 +5,9 @@ public class Movie implements Item{
     private String name;
     private String year;
     private String director;
-    private int rating;
+    private String rating;
 
-    public Movie(String name, String year, String director, int rating) {
+    public Movie(String name, String year, String director, String rating) {
         this.name = name;
         this.year = year;
         this.director = director;
@@ -15,7 +15,7 @@ public class Movie implements Item{
     }
 
     public String toString() {
-        return name + " " + year + " " + director + " " + rating;
+        return name + ", " + year + ", " + director + ", " + rating;
     }
 
     public boolean match(String name) {

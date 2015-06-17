@@ -23,4 +23,14 @@ public class MoviesController {
     }
 
 
+    public void returnMovie(){
+        String nameOfMovie = bibliotecaView.read();
+        if(librarySection.returnItem(nameOfMovie))
+            bibliotecaView.display(Messages.MOVIE_RETURN_SUCCESSFUL);
+        else
+            bibliotecaView.display(Messages.MOVIE_RETURN_UNSUCCESSFUL);
+
+    }
+
+
 }

@@ -50,12 +50,12 @@
     100%
   </span>
   <span class="absValue">
-    (20/ 20)
+    (17/ 17)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">BooksController$$EnhancerByMockitoWithCGLIB$$3da86759</td>
+    <td class="name">BooksController$$EnhancerByMockitoWithCGLIB$$421d92c1</td>
   </tr>
 <tr>
   <td class="name"><strong>total</strong></td>
@@ -72,7 +72,7 @@
     100%
   </span>
   <span class="absValue">
-    (20/ 20)
+    (17/ 17)
   </span>
 </td>
 </tr>
@@ -87,47 +87,44 @@
 <i>3</i>&nbsp;public class BooksController {
 <i>4</i>&nbsp;
 <i>5</i>&nbsp;    private BibliotecaView bibliotecaView ;
-<i>6</i>&nbsp;    private Books books ;
-<i>7</i>&nbsp;    private BookTokenizer bookTokenizer;
+<i>6</i>&nbsp;    private LibrarySection librarySection;
+<i>7</i>&nbsp;
 <i>8</i>&nbsp;
-<b class="fc"><i>9</i>&nbsp;    public BooksController(BibliotecaView bibliotecaView, Books books, BookTokenizer bookTokenizer) {</b>
+<b class="fc"><i>9</i>&nbsp;    public BooksController(BibliotecaView bibliotecaView, LibrarySection librarySection) {</b>
 <b class="fc"><i>10</i>&nbsp;        this.bibliotecaView = bibliotecaView ;</b>
-<b class="fc"><i>11</i>&nbsp;        this.books = books ;</b>
-<b class="fc"><i>12</i>&nbsp;        this.bookTokenizer = bookTokenizer;</b>
+<b class="fc"><i>11</i>&nbsp;        this.librarySection = librarySection;</b>
+<i>12</i>&nbsp;
 <b class="fc"><i>13</i>&nbsp;    }</b>
 <i>14</i>&nbsp;
 <i>15</i>&nbsp;
 <i>16</i>&nbsp;    public void listAllBooks() {
-<b class="fc"><i>17</i>&nbsp;        String data = books.toString();</b>
+<b class="fc"><i>17</i>&nbsp;        String data = librarySection.toString();</b>
 <b class="fc"><i>18</i>&nbsp;        bibliotecaView.display(data);</b>
 <b class="fc"><i>19</i>&nbsp;    }</b>
 <i>20</i>&nbsp;
 <i>21</i>&nbsp;    public void checkout(){
 <b class="fc"><i>22</i>&nbsp;        String nameOfBook = bibliotecaView.read();</b>
-<b class="fc"><i>23</i>&nbsp;        Book book = bookTokenizer.get(nameOfBook);</b>
-<b class="fc"><i>24</i>&nbsp;        if(books.checkout(book))</b>
-<b class="fc"><i>25</i>&nbsp;            bibliotecaView.display(Messages.CHECKOUT_SUCCESSFUL);</b>
-<i>26</i>&nbsp;        else
-<b class="fc"><i>27</i>&nbsp;            bibliotecaView.display(Messages.CHECKOUT_UNSUCCESSFUL);</b>
-<b class="fc"><i>28</i>&nbsp;    }</b>
-<i>29</i>&nbsp;
-<i>30</i>&nbsp;    public void returnBook(){
-<b class="fc"><i>31</i>&nbsp;        String nameOfBook = bibliotecaView.read();</b>
-<b class="fc"><i>32</i>&nbsp;        Book book = bookTokenizer.get(nameOfBook);</b>
-<b class="fc"><i>33</i>&nbsp;        if(books.returnBook(book))</b>
-<b class="fc"><i>34</i>&nbsp;            bibliotecaView.display(Messages.RETURN_SUCCESSFUL);</b>
-<i>35</i>&nbsp;        else
-<b class="fc"><i>36</i>&nbsp;            bibliotecaView.display(Messages.RETURN_UNSUCCESSFUL);</b>
-<i>37</i>&nbsp;
-<i>38</i>&nbsp;
-<b class="fc"><i>39</i>&nbsp;    }</b>
-<i>40</i>&nbsp;}
+<b class="fc"><i>23</i>&nbsp;        if(librarySection.checkout(nameOfBook))</b>
+<b class="fc"><i>24</i>&nbsp;             bibliotecaView.display(Messages.BOOK_CHECKOUT_SUCCESSFUL);</b>
+<i>25</i>&nbsp;        else
+<b class="fc"><i>26</i>&nbsp;            bibliotecaView.display(Messages.BOOK_CHECKOUT_UNSUCCESSFUL);</b>
+<b class="fc"><i>27</i>&nbsp;    }</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    public void returnBook(){
+<b class="fc"><i>30</i>&nbsp;        String nameOfBook = bibliotecaView.read();</b>
+<b class="fc"><i>31</i>&nbsp;        if(librarySection.returnItem(nameOfBook))</b>
+<b class="fc"><i>32</i>&nbsp;            bibliotecaView.display(Messages.BOOK_RETURN_SUCCESSFUL);</b>
+<i>33</i>&nbsp;        else
+<b class="fc"><i>34</i>&nbsp;            bibliotecaView.display(Messages.BOOK_RETURN_UNSUCCESSFUL);</b>
+<i>35</i>&nbsp;
+<b class="fc"><i>36</i>&nbsp;    }</b>
+<i>37</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-15 00:56</div>
+    <div style="float:right;">generated on 2015-06-17 11:06</div>
 </div>
 </body>
 </html>

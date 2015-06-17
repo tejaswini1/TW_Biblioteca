@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (9/ 9)
+    (10/ 10)
   </span>
 </td>
 </tr>
@@ -77,30 +77,34 @@
 <i>3</i>&nbsp;public class BibliotecaApp {
 <i>4</i>&nbsp;
 <i>5</i>&nbsp;    private BibliotecaView bibliotecaView;
-<i>6</i>&nbsp;    private BooksController booksController;
-<i>7</i>&nbsp;    private MenuController menuController;
-<i>8</i>&nbsp;
-<b class="fc"><i>9</i>&nbsp;    public BibliotecaApp(BibliotecaView bibliotecaView, BooksController booksController, MenuController menuController){</b>
-<i>10</i>&nbsp;
-<b class="fc"><i>11</i>&nbsp;        this.bibliotecaView = bibliotecaView;</b>
-<b class="fc"><i>12</i>&nbsp;        this.booksController = booksController;</b>
-<b class="fc"><i>13</i>&nbsp;        this.menuController = menuController;</b>
-<b class="fc"><i>14</i>&nbsp;    }</b>
-<i>15</i>&nbsp;
-<i>16</i>&nbsp;    public void start(){
-<b class="fc"><i>17</i>&nbsp;        bibliotecaView.display(Messages.WELCOME_MESSAGE);</b>
-<b class="fc"><i>18</i>&nbsp;        bibliotecaView.display(Messages.MENU_ITEMS);</b>
-<b class="fc"><i>19</i>&nbsp;        menuController.selectOption(bibliotecaView. readInteger());</b>
-<i>20</i>&nbsp;
-<i>21</i>&nbsp;
-<b class="fc"><i>22</i>&nbsp;    }</b>
-<i>23</i>&nbsp;}
+<i>6</i>&nbsp;    private MenuController menuController;
+<i>7</i>&nbsp;
+<b class="fc"><i>8</i>&nbsp;    public BibliotecaApp(BibliotecaView bibliotecaView, MenuController menuController) {</b>
+<i>9</i>&nbsp;
+<b class="fc"><i>10</i>&nbsp;        this.bibliotecaView = bibliotecaView;</b>
+<b class="fc"><i>11</i>&nbsp;        this.menuController = menuController;</b>
+<b class="fc"><i>12</i>&nbsp;    }</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    public void start() {
+<b class="fc"><i>15</i>&nbsp;        bibliotecaView.display(Messages.WELCOME_MESSAGE);</b>
+<i>16</i>&nbsp;        int option;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;        do {
+<b class="fc"><i>19</i>&nbsp;            bibliotecaView.display(Messages.MENU_ITEMS);</b>
+<b class="fc"><i>20</i>&nbsp;            option = bibliotecaView.readInteger();</b>
+<b class="fc"><i>21</i>&nbsp;            menuController.selectOption(option);</b>
+<i>22</i>&nbsp;
+<b class="fc"><i>23</i>&nbsp;        } while (option != 7);</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;    }</b>
+<i>27</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-15 00:56</div>
+    <div style="float:right;">generated on 2015-06-17 11:06</div>
 </div>
 </body>
 </html>

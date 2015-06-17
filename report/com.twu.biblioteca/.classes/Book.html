@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (9/ 9)
+    (7/ 7)
   </span>
 </td>
 </tr>
@@ -76,37 +76,38 @@
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;// gives single book details
 <i>4</i>&nbsp;
-<i>5</i>&nbsp;public class Book {
-<i>6</i>&nbsp;    String author;
-<i>7</i>&nbsp;    String name;
-<i>8</i>&nbsp;    String yearOfPublication;
+<i>5</i>&nbsp;public class Book implements Item{
+<i>6</i>&nbsp;    private String author;
+<i>7</i>&nbsp;    private String name;
+<i>8</i>&nbsp;    private String yearOfPublication;
 <i>9</i>&nbsp;
-<b class="fc"><i>10</i>&nbsp;    public Book(String name, String author, String yearOfPublication){</b>
-<b class="fc"><i>11</i>&nbsp;        this.author = author;</b>
-<b class="fc"><i>12</i>&nbsp;        this.name = name;</b>
-<b class="fc"><i>13</i>&nbsp;        this.yearOfPublication = yearOfPublication;</b>
-<i>14</i>&nbsp;
-<b class="fc"><i>15</i>&nbsp;    }</b>
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    public Book(String name, String author, String yearOfPublication){</b>
+<b class="fc"><i>12</i>&nbsp;        this.author = author;</b>
+<b class="fc"><i>13</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>14</i>&nbsp;        this.yearOfPublication = yearOfPublication;</b>
+<i>15</i>&nbsp;
 <i>16</i>&nbsp;
-<i>17</i>&nbsp;    public String toString(){
-<b class="fc"><i>18</i>&nbsp;        return name+&quot;, &quot;+author+&quot;, &quot;+yearOfPublication;</b>
-<i>19</i>&nbsp;    }
-<i>20</i>&nbsp;
-<i>21</i>&nbsp;    @Override
-<i>22</i>&nbsp;    public boolean equals(Object o) {
-<b class="fc"><i>23</i>&nbsp;        if(o instanceof Book &amp;&amp; (this.name.equals(((Book) o).name)))</b>
-<b class="fc"><i>24</i>&nbsp;            return true;</b>
-<b class="fc"><i>25</i>&nbsp;        return false;</b>
-<i>26</i>&nbsp;    }
-<i>27</i>&nbsp;
+<b class="fc"><i>17</i>&nbsp;    }</b>
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public String toString(){
+<b class="fc"><i>20</i>&nbsp;        return name+&quot;, &quot;+author+&quot;, &quot;+yearOfPublication;</b>
+<i>21</i>&nbsp;    }
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    public boolean match(String otherBook) {
+<b class="fc"><i>25</i>&nbsp;            return this.name.equals(otherBook);</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    }
 <i>28</i>&nbsp;
-<i>29</i>&nbsp;}
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-15 00:56</div>
+    <div style="float:right;">generated on 2015-06-17 11:06</div>
 </div>
 </body>
 </html>

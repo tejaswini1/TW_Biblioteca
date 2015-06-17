@@ -45,10 +45,40 @@ public class LibrarySectionTest {
         LibrarySection<Book> librarySection = new LibrarySection<Book>(new ArrayList<Book>(), booksList);
 
 
-        boolean actual = librarySection.returnBook("Java");
+        boolean actual = librarySection.returnItem("Java");
 
 
         assertEquals(true, actual);
+    }
+
+
+    @Test
+    public void shouldPrintUnSuccessfulMessageForSuccessfulReturn(){
+        ArrayList<Book> booksList = new ArrayList<Book>();
+        booksList.add(new Book("Java", "Jones", "21Feb2019"));
+        booksList.add(new Book("Os", "Jones", "21Feb2019"));
+        LibrarySection<Book> librarySection = new LibrarySection<Book>(new ArrayList<Book>(), booksList);
+
+
+        boolean actual = librarySection.returnItem("cn");
+
+
+        assertEquals(false, actual);
+    }
+
+
+    @Test
+    public void shouldPrintListOfAvailableBooks(){
+        ArrayList<Book> booksList = new ArrayList<Book>();
+        booksList.add(new Book("Java", "Jones", "21Feb2019"));
+        booksList.add(new Book("Os", "Jones", "21Feb2019"));
+        LibrarySection<Book> librarySection = new LibrarySection<Book>( booksList, new ArrayList<Book>());
+
+
+        String actual = librarySection.toString();
+
+
+        assertEquals("Java, Jones, 21Feb2019\nOs, Jones, 21Feb2019\n", actual);
     }
 
 }

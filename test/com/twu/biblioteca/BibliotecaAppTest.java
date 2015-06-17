@@ -10,7 +10,7 @@ public class BibliotecaAppTest {
     public void shouldCallReadIntegerMethodInStartMethod(){
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
         when(bibliotecaViewStub.readInteger())
-                .thenReturn(1, 6);
+                .thenReturn(1, 7);
         MenuController menuControllerStub = mock(MenuController.class);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaViewStub, menuControllerStub);
 
@@ -25,7 +25,7 @@ public class BibliotecaAppTest {
     public void shouldCallMethodsInStartMethod(){
         BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
         when(bibliotecaViewStub.readInteger())
-                .thenReturn(1, 6);
+                .thenReturn(1, 7);
         MenuController menuControllerStub = mock(MenuController.class);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaViewStub, menuControllerStub);
 
