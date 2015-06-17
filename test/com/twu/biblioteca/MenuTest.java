@@ -12,14 +12,14 @@ public class MenuTest {
     @Test
     public void shouldCallAppropriateClassMethod(){
         HashMap<Integer, MenuActionPerformable> menuItems = new HashMap<Integer, MenuActionPerformable>();
-        ListAllBooks listAllBooks = mock(ListAllBooks.class);
-        menuItems.put(1, listAllBooks);
+        ListAllItems listAllItems = mock(ListAllItems.class);
+        menuItems.put(1, listAllItems);
         Menu menu = new Menu(menuItems);
 
 
         menu.compute(1);
 
-        verify(listAllBooks, Mockito.times(1)).execute();
+        verify(listAllItems, Mockito.times(1)).execute();
     }
 
 
@@ -27,9 +27,9 @@ public class MenuTest {
     @Test
     public void shouldCallInvalidClassMethodIfUserSpecifiesWrongOption(){
         HashMap<Integer, MenuActionPerformable> menuItems = new HashMap<Integer, MenuActionPerformable>();
-        ListAllBooks listAllBooks = mock(ListAllBooks.class);
+        ListAllItems listAllItems = mock(ListAllItems.class);
         InvalidOption invalidOptionStub = mock(InvalidOption.class);
-        menuItems.put(1, listAllBooks);
+        menuItems.put(1, listAllItems);
         menuItems.put(7, invalidOptionStub);
 
         Menu menu = new Menu(menuItems);

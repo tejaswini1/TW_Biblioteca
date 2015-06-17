@@ -2,15 +2,16 @@ package com.twu.biblioteca;
 
 public class CheckoutMovie implements MenuActionPerformable{
 
-    private MoviesController moviesController;
+    private ItemController itemController;
+    private LibrarySection librarySection;
 
-
-    public CheckoutMovie(MoviesController moviesController){
-        this.moviesController = moviesController;
+    public CheckoutMovie(ItemController itemController, LibrarySection librarySection){
+        this.itemController = itemController;
+        this.librarySection = librarySection;
 
     }
 
     public void execute(){
-        moviesController.checkout();
+        itemController.checkout(librarySection, Messages.MOVIE_CHECKOUT_SUCCESSFUL, Messages.MOVIE_CHECKOUT_UNSUCCESSFUL);
     }
 }
