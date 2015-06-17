@@ -8,6 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        HashMap<String, ArrayList<Book>> checkoutHistory = new HashMap<String, ArrayList<Book>>();
+        checkoutHistory.put("teju", new ArrayList<Book>());
+        checkoutHistory.put("sowmya", new ArrayList<Book>());
+        CheckoutHistory checkoutHistoryObject = new CheckoutHistory(checkoutHistory);
+
         ArrayList<Book> booksList = new ArrayList<Book>();
         booksList.add(new Book("Java", "Jones", "21Feb2019"));
         booksList.add(new Book("CN", "Stalling", "3Oct1990"));

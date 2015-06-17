@@ -8,7 +8,7 @@ public class UsersTest {
 
     @Test
     public void shouldReturnUsersInformation(){
-        User users = new User("teju", "tejubhosle123@gmail.com", 9850678439l , "abc-345", "teju");
+        User users = new User("teju", "tejubhosle123@gmail.com", 9850678439l , "abc-345", "teju", "user");
 
         String actual = users.toString();
 
@@ -17,11 +17,14 @@ public class UsersTest {
 
     @Test
     public void shouldReturnTrueForCorrectPasswordAndLoginID(){
-        User user = new User("teju", "tejubhosle123@gmail.com", 9850678439l , "abc-345", "teju");
+        User user = new User("teju", "tejubhosle123@gmail.com", 9850678439l , "abc-345", "teju", "user");
 
         boolean actual = user.match("abc-345", "teju");
 
         assertEquals(true, actual);
     }
+
+
+
 
 }

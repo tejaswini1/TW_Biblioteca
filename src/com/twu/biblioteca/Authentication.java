@@ -11,11 +11,14 @@ public class Authentication {
         this.users = users;
     }
 
-    public boolean validUser(String loginID, String password){
+    public String validUser(String loginID, String password){
         for(User user : users){
-            if(user.match(loginID,password))
-                return true;
+            if(user.match(loginID,password)){
+                if(user.isLibrarian())
+                    return "Librarian";
+                return "User";
+            }
         }
-        return false;
+        return "Please Input Valid Username and password";
     }
 }
