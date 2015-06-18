@@ -11,8 +11,8 @@ public class MenuController {
 
 
 
-    public void selectOption(int option){
-        menu.compute(option);
+    public void selectOption(int option, String loginID){
+        menu.compute(option, loginID);
     }
 
 

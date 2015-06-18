@@ -19,6 +19,11 @@ public class CheckoutHistory implements MenuActionPerformable{
     }
 
 
+    public void remove(String loginId, Book item) {
+        ArrayList<Book> alreadyCheckedOutList = history.get(loginId);
+        alreadyCheckedOutList.remove(item);
+    }
+
 
     public void execute(){
         String userName = "";
@@ -44,5 +49,6 @@ public class CheckoutHistory implements MenuActionPerformable{
         }
         return result;
     }
+
 
 }

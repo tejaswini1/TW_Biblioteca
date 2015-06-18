@@ -24,11 +24,13 @@ public class LibrarySection<T extends Item> {
         return result;
     }
 
-    public String checkout(String otherBook, String successfulMessage, String unsuccessfulMessage) {
+    public String checkout(String otherBook, String successfulMessage, String unsuccessfulMessage, String loginId, CheckoutHistory checkoutHistory) {
         ArrayList<T> searchResult = search(otherBook, availableItems);
-        for (T book : searchResult) {
-            issuedItems.add(book);
-            availableItems.remove(book);
+        for (T item : searchResult) {
+            issuedItems.add(item);
+            availableItems.remove(item);
+            if(item instanceof Book)
+                checkoutHistory.add(loginId, (Book)item);
             return successfulMessage;
         }
 
@@ -47,11 +49,13 @@ public class LibrarySection<T extends Item> {
         return resultBooks;
     }
 
-    public String returnItem(String otherBook, String successfulMessage, String unsucessfulMessage) {
+    public String returnItem(String otherBook, String successfulMessage, String unsucessfulMessage, String loginId, CheckoutHistory checkoutHistory) {
         ArrayList<T> searchResult = search(otherBook, issuedItems);
-        for (T book : searchResult) {
-            availableItems.add(book);
-            issuedItems.remove(book);
+        for (T item : searchResult) {
+            availableItems.add(item);
+            issuedItems.remove(item);
+            if(item instanceof Book)
+                checkoutHistory.remove(loginId, (Book)item);
             return successfulMessage;
         }
 

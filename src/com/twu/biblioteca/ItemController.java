@@ -14,13 +14,13 @@ public class ItemController {
         bibliotecaView.display(data);
     }
 
-    public void checkout(LibrarySection librarySection, String successMessage, String unsuccesfulMessage){
+    public void checkout(LibrarySection librarySection, String successMessage, String unsuccesfulMessage, String loginID, CheckoutHistory checkoutHistory){
         String nameOfItem = bibliotecaView.read();
-            bibliotecaView.display(librarySection.checkout(nameOfItem, successMessage, unsuccesfulMessage));
+            bibliotecaView.display(librarySection.checkout(nameOfItem, successMessage, unsuccesfulMessage, loginID, checkoutHistory));
     }
 
-    public void returnItem(LibrarySection librarySection, String successMessage, String unsuccessfulMessge){
+    public void returnItem(LibrarySection librarySection, String successMessage, String unsuccessfulMessge, String loginID, CheckoutHistory checkoutHistory){
         String nameOfItem = bibliotecaView.read();
-            bibliotecaView.display(librarySection.returnItem(nameOfItem, successMessage, unsuccessfulMessge));
+            bibliotecaView.display(librarySection.returnItem(nameOfItem, successMessage, unsuccessfulMessge, loginID, checkoutHistory));
     }
 }
