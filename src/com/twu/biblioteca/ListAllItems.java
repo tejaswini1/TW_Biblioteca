@@ -11,7 +11,7 @@ public class ListAllItems implements MenuActionPerformable {
     }
 
 
-    public void execute() {
+    public void execute(String loginID) {
         itemController.listAllItems(librarySection);
     }
 }

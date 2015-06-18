@@ -10,7 +10,7 @@ public class Logout implements MenuActionPerformable{
 
 
     @Override
-    public void execute() {
+    public void execute(String loginId) {
         bibliotecaApp.start();
     }
 }

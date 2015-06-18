@@ -17,7 +17,7 @@ public class InvalidOptionTest {
         BibliotecaView bibliotecaView = mock(BibliotecaView.class);
         InvalidOption invalidOption = new InvalidOption(bibliotecaView);
 
-        invalidOption.execute();
+        invalidOption.execute("login id");
 
         verify(bibliotecaView, times(1)).display(anyString());
     }

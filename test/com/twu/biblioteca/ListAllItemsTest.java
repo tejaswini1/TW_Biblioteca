@@ -17,10 +17,11 @@ public class ListAllItemsTest {
         ArrayList<Book> availableBook = new ArrayList<Book>();
         availableBook.add(new Book("book1", "author1", "12Feb"));
         availableBook.add(new Book("book2", "author2", "13Jan"));
-        LibrarySection<Book> librarySection = new LibrarySection<Book>(availableBook, new ArrayList<Book>());
+        CheckoutHistory checkoutHistory = mock(CheckoutHistory.class);
+        LibrarySection<Book> librarySection = new LibrarySection<Book>(availableBook, new ArrayList<Book>(), checkoutHistory);
         ListAllItems listAllItems = new ListAllItems(itemsController, librarySection);
 
-        listAllItems.execute();
+        listAllItems.execute("teju-123");
 
         verify(itemsController, times(1)).listAllItems(librarySection);
     }

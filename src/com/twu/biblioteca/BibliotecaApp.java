@@ -4,14 +4,14 @@ public class BibliotecaApp {
 
     private BibliotecaView bibliotecaView;
     private MenuController menuController;
-    private Authentication authentication;
+    private Users users;
 
 
-    public BibliotecaApp(BibliotecaView bibliotecaView, MenuController menuController, Authentication authentication)  {
+    public BibliotecaApp(BibliotecaView bibliotecaView, MenuController menuController, Users users)  {
 
         this.bibliotecaView = bibliotecaView;
         this.menuController = menuController;
-        this.authentication = authentication;
+        this.users = users;
 
     }
 
@@ -24,25 +24,23 @@ public class BibliotecaApp {
         while(true){
             bibliotecaView.display(Messages.LOGIN_MESSAGE);
             loginID = bibliotecaView.read();
-            String password = bibliotecaView.read();
-            role = authentication.validUser(loginID, password);
+
+            role = users.validUser(loginID, bibliotecaView.read());
 
             if(!role.equals("Please Input Valid Username and password"))
                 break;
             }
-
+            bibliotecaView.display(users.displayValidUser(loginID));
 
         do {
             bibliotecaView.display(Messages.MENU_ITEMS);
-            if(role.equals("Librarian")) {
-                bibliotecaView.display("8] Checkout History");
-                bibliotecaView.display("9] Quit");
-            }
+            if(role.equals("Librarian"))
+                bibliotecaView.display(Messages.LIBRARIAN_MENU_ITEMS);
+
             option = bibliotecaView.readInteger();
             menuController.selectOption(option, loginID);
 
-
-        } while (option != 10);
+            } while (option != 7);
 
 
     }

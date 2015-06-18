@@ -8,11 +8,13 @@ public class LibrarySection<T extends Item> {
 
     private ArrayList<T> availableItems;
     private ArrayList<T> issuedItems;
+    private CheckoutHistory checkoutHistory;
 
-    public LibrarySection(ArrayList<T> availableItems, ArrayList<T> issuedItems) {
+    public LibrarySection(ArrayList<T> availableItems, ArrayList<T> issuedItems, CheckoutHistory checkoutHistory) {
 
         this.availableItems = availableItems;
         this.issuedItems = issuedItems;
+        this.checkoutHistory = checkoutHistory;
     }
 
     @Override
@@ -24,7 +26,7 @@ public class LibrarySection<T extends Item> {
         return result;
     }
 
-    public String checkout(String otherBook, String successfulMessage, String unsuccessfulMessage, String loginId, CheckoutHistory checkoutHistory) {
+    public String checkout(String otherBook, String successfulMessage, String unsuccessfulMessage, String loginId) {
         ArrayList<T> searchResult = search(otherBook, availableItems);
         for (T item : searchResult) {
             issuedItems.add(item);
@@ -49,7 +51,7 @@ public class LibrarySection<T extends Item> {
         return resultBooks;
     }
 
-    public String returnItem(String otherBook, String successfulMessage, String unsucessfulMessage, String loginId, CheckoutHistory checkoutHistory) {
+    public String returnItem(String otherBook, String successfulMessage, String unsucessfulMessage, String loginId) {
         ArrayList<T> searchResult = search(otherBook, issuedItems);
         for (T item : searchResult) {
             availableItems.add(item);

@@ -2,9 +2,6 @@
 //
 //import org.junit.Test;
 //
-//import java.util.ArrayList;
-//
-//import static junit.framework.TestCase.assertEquals;
 //import static org.mockito.Mockito.*;
 //
 //public class BibliotecaAppTest {
@@ -12,7 +9,7 @@
 //
 //    @Test
 //    public void shouldCallReadIntegerMethodInStartMethod() {
-//        Authentication authenticationStub = mock(Authentication.class);
+//        Users authenticationStub = mock(Users.class);
 //        BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
 //        when(bibliotecaViewStub.readInteger())
 //                .thenReturn(1, 7);
@@ -27,7 +24,7 @@
 //
 //    @Test
 //    public void shouldCallMethodsInStartMethod() {
-//        Authentication authenticationStub = mock(Authentication.class);
+//        Users authenticationStub = mock(Users.class);
 //        BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
 //        when(bibliotecaViewStub.readInteger())
 //                .thenReturn(1, 7);
@@ -44,7 +41,7 @@
 ////    public void shouldCallReadMethodForTakingLoginIDAndPassword() {
 ////        ArrayList<User> users = new ArrayList<User>();
 ////        users.add(new User("teju", "tejubhosle@gmail", 9850748390l, "pune-123", "teju", "user"));
-////        Authentication authentication = new Authentication(users);
+////        Users authentication = new Users(users);
 ////        BibliotecaView bibliotecaViewStub = mock(BibliotecaView.class);
 ////        when(bibliotecaViewStub.read())
 ////                .thenReturn("pune-123", "teju");

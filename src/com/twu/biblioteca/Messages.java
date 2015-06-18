@@ -14,5 +14,6 @@ public interface Messages {
     String MOVIE_RETURN_SUCCESSFUL = "Thank you for returning movie";
     String MOVIE_RETURN_UNSUCCESSFUL = "That is not a valid movie to return";
     String LOGIN_MESSAGE = "LOGIN\n Login ID : \n PASSWORD : ";
+    String LIBRARIAN_MENU_ITEMS = " 8] Checkout History \n 9] Quit";
 
 }

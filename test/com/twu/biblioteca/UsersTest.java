@@ -2,29 +2,61 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class UsersTest {
 
     @Test
-    public void shouldReturnUsersInformation(){
-        User users = new User("teju", "tejubhosle123@gmail.com", 9850678439l , "abc-345", "teju", "user");
+    public void shouldReturnStringUserIfValidationIsMadeByUser(){
+        ArrayList<User> userArrayList = new ArrayList<User>();
+        userArrayList.add(new User("teju", "t@gmail", 635839l, "teju-123", "passwrd", "user"));
 
-        String actual = users.toString();
+        Users users = new Users(userArrayList);
 
-        assertEquals("teju\ntejubhosle123@gmail.com\n9850678439", actual);
+        String actualRole = users.validUser("teju-123", "passwrd");
+
+        assertEquals("User", actualRole);
     }
 
     @Test
-    public void shouldReturnTrueForCorrectPasswordAndLoginID(){
-        User user = new User("teju", "tejubhosle123@gmail.com", 9850678439l , "abc-345", "teju", "user");
+    public void shouldReturnStringLibrarianIfValidationIsMadeByLibrarian(){
+        ArrayList<User> userArrayList = new ArrayList<User>();
+        userArrayList.add(new User("teju", "t@gmail", 635839l, "teju-123", "passwrd", "librarian"));
 
-        boolean actual = user.match("abc-345", "teju");
+        Users users = new Users(userArrayList);
 
-        assertEquals(true, actual);
+        String actualRole = users.validUser("teju-123", "passwrd");
+
+        assertEquals("Librarian", actualRole);
     }
 
 
 
+    @Test
+    public void shouldReturnStringForInavlidUsernameAndPassword(){
+        ArrayList<User> userArrayList = new ArrayList<User>();
+        userArrayList.add(new User("teju", "t@gmail", 635839l, "teju-123", "passwrd", "librarian"));
+
+        Users users = new Users(userArrayList);
+
+        String actualRole = users.validUser("teju-123", "hello");
+
+        assertEquals("Please Input Valid Username and password", actualRole);
+    }
+
+
+    @Test
+    public void shouldDisplayDetailsOfUser(){
+        ArrayList<User> userArrayList = new ArrayList<User>();
+        userArrayList.add(new User("teju", "t@gmail", 635839l, "teju-123", "passwrd", "librarian"));
+
+        Users users = new Users(userArrayList);
+
+        String actual = users.displayValidUser("teju-123");
+
+        assertEquals("teju\nt@gmail\n635839", actual);
+    }
 
 }

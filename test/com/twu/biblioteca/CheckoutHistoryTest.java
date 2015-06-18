@@ -22,7 +22,7 @@ public class CheckoutHistoryTest {
         CheckoutHistory checkoutHistory = new CheckoutHistory(checkoutHistoryList, bibliotecaView);
         checkoutHistory.add("teju", new Book("java", "a1", "12feb"));
 
-        checkoutHistory.execute();
+        checkoutHistory.execute("login-id");
 
         Mockito.verify(bibliotecaView, times(1)).display("User : teju\njava, a1, 12feb\n\n");
 
@@ -40,7 +40,7 @@ public class CheckoutHistoryTest {
         checkoutHistory.add("teju", new Book("java", "a1", "12feb"));
         checkoutHistory.add("teju", new Book("os", "a4", "12feb"));
 
-        checkoutHistory.execute();
+        checkoutHistory.execute("login id");
 
         Mockito.verify(bibliotecaView, times(1)).display(anyString());
 

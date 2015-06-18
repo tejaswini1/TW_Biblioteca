@@ -13,8 +13,8 @@ public class CheckoutHistory implements MenuActionPerformable{
         this.bibliotecaView = bibliotecaView;
     }
 
-    public void add(String name, Book book){
-        ArrayList<Book> alreadyCheckedOutList = history.get(name);
+    public void add(String loginId, Book book){
+        ArrayList<Book> alreadyCheckedOutList = history.get(loginId);
         alreadyCheckedOutList.add(book);
     }
 
@@ -25,7 +25,7 @@ public class CheckoutHistory implements MenuActionPerformable{
     }
 
 
-    public void execute(){
+    public void execute(String loginId){
         String userName = "";
         String result = "";
         ArrayList<Book> books ;
@@ -41,7 +41,6 @@ public class CheckoutHistory implements MenuActionPerformable{
 
     private String displaySingleUsersHistory(String userName, ArrayList<Book> books) {
         String result = "";
-
         result = "User : " + userName + "\n";
         for(Book book : books){
 

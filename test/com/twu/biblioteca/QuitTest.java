@@ -14,7 +14,7 @@ public class QuitTest {
     @Test
     public void exitsWithStatusCode() {
         exit.expectSystemExitWithStatus(0);
-        new Quit().execute();
+        new Quit().execute("login id");
     }
 
 }

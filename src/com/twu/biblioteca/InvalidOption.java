@@ -7,7 +7,7 @@ public class InvalidOption implements MenuActionPerformable {
         this.bibliotecaView = bibliotecaView ;
     }
 
-    public void execute(){
+    public void execute(String loginId){
          bibliotecaView.display(Messages.INVALID_MESSAGE);
     }
 }
