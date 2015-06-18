@@ -8,10 +8,17 @@ public class Main {
 
     public static void main(String[] args) {
 
+        ArrayList<User> users = new ArrayList<User>();
+        users.add(new User("teju", "tejubhosle@gmail", 9850748390l, "pune-123", "teju", "user"));
+        users.add(new User("tejas", "tejas@gmail", 9850748390l, "pune-678", "tejas", "user"));
+        users.add(new User("jone", "jone@gmail", 9850748390l, "pune-78", "jone", "librarian"));
+
+        Authentication authentication = new Authentication(users);
+
         HashMap<String, ArrayList<Book>> checkoutHistory = new HashMap<String, ArrayList<Book>>();
         checkoutHistory.put("teju", new ArrayList<Book>());
-        checkoutHistory.put("sowmya", new ArrayList<Book>());
-        CheckoutHistory checkoutHistoryObject = new CheckoutHistory(checkoutHistory);
+        checkoutHistory.put("tejas", new ArrayList<Book>());
+        checkoutHistory.put("jone", new ArrayList<Book>());
 
         ArrayList<Book> booksList = new ArrayList<Book>();
         booksList.add(new Book("Java", "Jones", "21Feb2019"));
@@ -38,13 +45,14 @@ public class Main {
         menuList.put(6, new ReturnMovie(itemController, librarySectionMovies));
         menuList.put(7, new Quit());
         menuList.put(8, new InvalidOption(bibliotecaView));
+        menuList.put(9, new CheckoutHistory(checkoutHistory, bibliotecaView));
 
 
         Menu menu = new Menu(menuList);
 
         MenuController menuController = new MenuController(bibliotecaView, menu);
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, menuController);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, menuController, authentication);
 
         bibliotecaApp.start();
     }
