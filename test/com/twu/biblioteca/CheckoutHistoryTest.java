@@ -6,8 +6,6 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.sun.javaws.JnlpxArgs.verify;
-
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
