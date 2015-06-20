@@ -9,8 +9,6 @@ public class ReturnMovie implements MenuActionPerformable{
 
     public ReturnMovie(ItemController itemController, LibrarySection librarySection){
         this.itemController = itemController;
-
-
         this.librarySection = librarySection;
 
     }

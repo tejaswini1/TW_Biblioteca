@@ -4,7 +4,7 @@ public interface Messages {
 
     String WELCOME_MESSAGE = " Welcome to biblioteca ";
     String INVALID_MESSAGE = " Select Valid Option! ";
-    String MENU_ITEMS = " 1] List of ALL Books \n 2] Checkout-Book \n 3] Return-Book \n 4] List All Movies \n 5] Checkout-Movie \n 6] Return_Movie \n 7]Logout";
+    String MENU_ITEMS = "  Return Book\n  Checkout Movie \n  Return Movie \n Logout";
     String BOOK_CHECKOUT_SUCCESSFUL = "Thank you! Enjoy the book";
     String BOOK_CHECKOUT_UNSUCCESSFUL = "The book is not available";
     String BOOK_RETURN_SUCCESSFUL = "Thank you for returning book";
@@ -14,6 +14,7 @@ public interface Messages {
     String MOVIE_RETURN_SUCCESSFUL = "Thank you for returning movie";
     String MOVIE_RETURN_UNSUCCESSFUL = "That is not a valid movie to return";
     String LOGIN_MESSAGE = "LOGIN\n Login ID : \n PASSWORD : ";
-    String LIBRARIAN_MENU_ITEMS = " 8] Checkout History \n 9] Quit";
+    String LIBRARIAN_MENU_ITEMS = "  Checkout History\n ";
+    String INITIAL_MENU_ITEM  = " List Books\n List Movies\n Login\n Quit\n";
 
 }

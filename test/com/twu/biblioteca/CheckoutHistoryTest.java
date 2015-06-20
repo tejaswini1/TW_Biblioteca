@@ -14,9 +14,9 @@ public class CheckoutHistoryTest {
 
     @Test
     public void shouldDisplayCheckoutHistory(){
-        HashMap<String, ArrayList<Book>> checkoutHistoryList = new HashMap<String, ArrayList<Book>>();
-        checkoutHistoryList.put("teju", new ArrayList<Book>());
-        checkoutHistoryList.put("sowmya", new ArrayList<Book>());
+        HashMap<String, ArrayList<Item>> checkoutHistoryList = new HashMap<String, ArrayList<Item>>();
+        checkoutHistoryList.put("teju", new ArrayList<Item>());
+        checkoutHistoryList.put("sowmya", new ArrayList<Item>());
         BibliotecaView bibliotecaView = mock(BibliotecaView.class);
 
         CheckoutHistory checkoutHistory = new CheckoutHistory(checkoutHistoryList, bibliotecaView);
@@ -31,9 +31,9 @@ public class CheckoutHistoryTest {
 
     @Test
     public void shouldDisplayCheckoutHistoryForMoreThanOneBook(){
-        HashMap<String, ArrayList<Book>> checkoutHistoryList = new HashMap<String, ArrayList<Book>>();
-        checkoutHistoryList.put("teju", new ArrayList<Book>());
-        checkoutHistoryList.put("sowmya", new ArrayList<Book>());
+        HashMap<String, ArrayList<Item>> checkoutHistoryList = new HashMap<String, ArrayList<Item>>();
+        checkoutHistoryList.put("teju", new ArrayList<Item>());
+        checkoutHistoryList.put("sowmya", new ArrayList<Item>());
         BibliotecaView bibliotecaView = mock(BibliotecaView.class);
 
         CheckoutHistory checkoutHistory = new CheckoutHistory(checkoutHistoryList, bibliotecaView);

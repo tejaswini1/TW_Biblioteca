@@ -8,7 +8,7 @@ public class MenuController {
         this.menu = menu;
     }
 
-    public void selectOption(int option, String loginID){
+    public void selectOption(String option, String loginID){
         menu.compute(option, loginID);
     }
 

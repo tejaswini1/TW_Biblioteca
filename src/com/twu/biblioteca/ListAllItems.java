@@ -10,7 +10,6 @@ public class ListAllItems implements MenuActionPerformable {
         this.librarySection = librarySection;
     }
 
-
     public void execute(String loginID) {
         itemController.listAllItems(librarySection);
     }

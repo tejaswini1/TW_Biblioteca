@@ -8,7 +8,6 @@ public class Logout implements MenuActionPerformable{
         this.bibliotecaApp = bibliotecaApp;
     }
 
-
     @Override
     public void execute(String loginId) {
         bibliotecaApp.start();

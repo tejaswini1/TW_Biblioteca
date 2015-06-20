@@ -7,13 +7,10 @@ public class Book implements Item{
     private String name;
     private String yearOfPublication;
 
-
     public Book(String name, String author, String yearOfPublication){
         this.author = author;
         this.name = name;
         this.yearOfPublication = yearOfPublication;
-
-
     }
 
     public String toString(){

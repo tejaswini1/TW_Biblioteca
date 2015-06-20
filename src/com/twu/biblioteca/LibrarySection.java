@@ -10,6 +10,7 @@ public class LibrarySection<T extends Item> {
     private ArrayList<T> issuedItems;
     private CheckoutHistory checkoutHistory;
 
+
     public LibrarySection(ArrayList<T> availableItems, ArrayList<T> issuedItems, CheckoutHistory checkoutHistory) {
 
         this.availableItems = availableItems;
@@ -31,11 +32,10 @@ public class LibrarySection<T extends Item> {
         for (T item : searchResult) {
             issuedItems.add(item);
             availableItems.remove(item);
-            if(item instanceof Book)
-                checkoutHistory.add(loginId, (Book)item);
+
+            checkoutHistory.add(loginId, item);
             return successfulMessage;
         }
-
         return unsuccessfulMessage;
     }
 
@@ -45,7 +45,6 @@ public class LibrarySection<T extends Item> {
         for (T item : bookList) {
             if (item.match(otherBook)){
                 resultBooks.add(item);
-
             }
         }
         return resultBooks;
@@ -56,11 +55,10 @@ public class LibrarySection<T extends Item> {
         for (T item : searchResult) {
             availableItems.add(item);
             issuedItems.remove(item);
-            if(item instanceof Book)
-                checkoutHistory.remove(loginId, (Book)item);
+
+            checkoutHistory.remove(loginId, item);
             return successfulMessage;
         }
-
         return unsucessfulMessage;
     }
 }

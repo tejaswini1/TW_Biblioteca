@@ -7,41 +7,57 @@ public class BibliotecaApp {
     private Users users;
 
 
-    public BibliotecaApp(BibliotecaView bibliotecaView, MenuController menuController, Users users)  {
+    public BibliotecaApp(BibliotecaView bibliotecaView, MenuController menuController, Users users) {
 
         this.bibliotecaView = bibliotecaView;
         this.menuController = menuController;
-        this.users = users;
 
+        this.users = users;
     }
 
     public void start() {
-        int option;
-        String role;
-        String loginID;
+        String option = "";
+        String loginID = "";
+        String role = "";
         bibliotecaView.display(Messages.WELCOME_MESSAGE);
 
-        while(true){
-            bibliotecaView.display(Messages.LOGIN_MESSAGE);
-            loginID = bibliotecaView.read();
+        while (!option.equals("Quit")) {
+            bibliotecaView.display(Messages.INITIAL_MENU_ITEM);
+            option = bibliotecaView.read();
 
-            role = users.validUser(loginID, bibliotecaView.read());
 
-            if(!role.equals("Please Input Valid Username and password"))
-                break;
+            if (!option.equals("Login")) {
+                menuController.selectOption(option, "");
             }
-            bibliotecaView.display(users.displayValidUser(loginID));
 
-        do {
-            bibliotecaView.display(Messages.MENU_ITEMS);
-            if(role.equals("Librarian"))
-                bibliotecaView.display(Messages.LIBRARIAN_MENU_ITEMS);
+            else {
+                while (true) {
+                    bibliotecaView.display(Messages.LOGIN_MESSAGE);
+                    loginID = bibliotecaView.read();
 
-            option = bibliotecaView.readInteger();
-            menuController.selectOption(option, loginID);
+                    role = users.validUser(loginID, bibliotecaView.read());
 
-            } while (option != 7);
+                    if (!role.equals("Please Input Valid Username and password"))
+                        break;
+                }
 
+                bibliotecaView.display(users.displayValidUser(loginID));
+
+                do {
+                    bibliotecaView.display(Messages.INITIAL_MENU_ITEM);
+                    bibliotecaView.display(Messages.MENU_ITEMS);
+                    if (role.equals("Librarian"))
+                        bibliotecaView.display(Messages.LIBRARIAN_MENU_ITEMS);
+
+                    option = bibliotecaView.read();
+                    menuController.selectOption(option, loginID);
+
+                } while (!option.equals("Quit"));
+            }
+        }
 
     }
+
+
 }
+
