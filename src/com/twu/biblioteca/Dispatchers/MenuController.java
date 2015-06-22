@@ -1,4 +1,4 @@
-package com.twu.biblioteca.Controllers;
+package com.twu.biblioteca.Dispatchers;
 
 import com.twu.biblioteca.Menu;
 

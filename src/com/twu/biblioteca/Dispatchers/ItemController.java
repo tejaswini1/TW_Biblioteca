@@ -1,6 +1,6 @@
-package com.twu.biblioteca.Controllers;
+package com.twu.biblioteca.Dispatchers;
 
-import com.twu.biblioteca.BibliotecaView;
+import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
 import com.twu.biblioteca.LibrarySection;
 
 public class ItemController {

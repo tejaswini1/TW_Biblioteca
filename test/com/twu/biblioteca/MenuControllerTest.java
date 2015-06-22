@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Controllers.MenuController;
+import com.twu.biblioteca.Dispatchers.MenuController;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;

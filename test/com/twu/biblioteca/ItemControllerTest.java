@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Controllers.ItemController;
+import com.twu.biblioteca.Dispatchers.ItemController;
+import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
 import org.junit.Test;
 
 import static org.mockito.Matchers.any;

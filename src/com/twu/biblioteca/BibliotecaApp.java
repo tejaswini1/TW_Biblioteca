@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Controllers.MenuController;
+import com.twu.biblioteca.Dispatchers.MenuController;
+import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
 import com.twu.biblioteca.Validation.Users;
 
 public class BibliotecaApp {

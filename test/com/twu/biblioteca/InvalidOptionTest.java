@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
 import com.twu.biblioteca.MenuActions.InvalidOption;
 import org.junit.Test;
 

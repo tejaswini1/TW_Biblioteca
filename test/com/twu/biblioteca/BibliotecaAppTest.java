@@ -1,10 +1,10 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Controllers.MenuController;
+import com.twu.biblioteca.Dispatchers.MenuController;
+import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
 import com.twu.biblioteca.Validation.Users;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class BibliotecaAppTest {
