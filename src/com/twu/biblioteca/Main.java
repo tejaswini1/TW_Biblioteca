@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Validation.User;
+import com.twu.biblioteca.Validation.Users;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -42,10 +45,10 @@ public class Main {
         BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, menuController, users);
 
 
-        menuList.put("List Books", new ListAllItems(itemController, librarySectionBooks));
+        menuList.put("List Books", new ListItems(itemController, librarySectionBooks));
         menuList.put("Checkout Book", new CheckoutBook(itemController, librarySectionBooks));
         menuList.put("Return Book", new ReturnBook(itemController, librarySectionBooks));
-        menuList.put("List Movies", new ListAllItems(itemController, librarySectionMovies));
+        menuList.put("List Movies", new ListItems(itemController, librarySectionMovies));
         menuList.put("Checkout Movie", new CheckoutMovie(itemController, librarySectionMovies));
         menuList.put("Return Movie", new ReturnMovie(itemController, librarySectionMovies));
         menuList.put("Logout", new Logout(bibliotecaApp));

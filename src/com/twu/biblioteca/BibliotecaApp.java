@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Validation.Users;
+
 public class BibliotecaApp {
 
     private BibliotecaView bibliotecaView;

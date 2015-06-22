@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Validation;
+
+import com.twu.biblioteca.Validation.User;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Validation.User;
+import com.twu.biblioteca.Validation.Users;
 import org.junit.Test;
 
 import java.util.ArrayList;

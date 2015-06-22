@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.mockito.Mockito.*;
 
-public class ListAllItemsTest {
+public class ListItemsTest {
 
 
     @Test
@@ -19,9 +19,9 @@ public class ListAllItemsTest {
         availableBook.add(new Book("book2", "author2", "13Jan"));
         CheckoutHistory checkoutHistory = mock(CheckoutHistory.class);
         LibrarySection<Book> librarySection = new LibrarySection<Book>(availableBook, new ArrayList<Book>(), checkoutHistory);
-        ListAllItems listAllItems = new ListAllItems(itemsController, librarySection);
+        ListItems listItems = new ListItems(itemsController, librarySection);
 
-        listAllItems.execute("teju-123");
+        listItems.execute("teju-123");
 
         verify(itemsController, times(1)).listAllItems(librarySection);
     }
