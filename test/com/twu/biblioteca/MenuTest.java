@@ -28,12 +28,12 @@ public class MenuTest {
         ListAllItems listAllItems = mock(ListAllItems.class);
         InvalidOption invalidOptionStub = mock(InvalidOption.class);
         menuItems.put("List Books", listAllItems);
-        menuItems.put("Invalid Options", invalidOptionStub);
+        menuItems.put("Invalid Option", invalidOptionStub);
         Menu menu = new Menu(menuItems);
 
-        menu.compute("Invalid Options", "login");
+        menu.compute("List Food Items", "login-id");
 
-        verify(invalidOptionStub, Mockito.times(1)).execute("login");
+        verify(invalidOptionStub, Mockito.times(1)).execute("login-id");
     }
 
 

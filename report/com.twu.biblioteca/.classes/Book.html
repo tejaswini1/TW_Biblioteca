@@ -81,33 +81,30 @@
 <i>7</i>&nbsp;    private String name;
 <i>8</i>&nbsp;    private String yearOfPublication;
 <i>9</i>&nbsp;
-<i>10</i>&nbsp;
-<b class="fc"><i>11</i>&nbsp;    public Book(String name, String author, String yearOfPublication){</b>
-<b class="fc"><i>12</i>&nbsp;        this.author = author;</b>
-<b class="fc"><i>13</i>&nbsp;        this.name = name;</b>
-<b class="fc"><i>14</i>&nbsp;        this.yearOfPublication = yearOfPublication;</b>
+<b class="fc"><i>10</i>&nbsp;    public Book(String name, String author, String yearOfPublication){</b>
+<b class="fc"><i>11</i>&nbsp;        this.author = author;</b>
+<b class="fc"><i>12</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>13</i>&nbsp;        this.yearOfPublication = yearOfPublication;</b>
+<b class="fc"><i>14</i>&nbsp;    }</b>
 <i>15</i>&nbsp;
-<i>16</i>&nbsp;
-<b class="fc"><i>17</i>&nbsp;    }</b>
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;    public String toString(){
-<b class="fc"><i>20</i>&nbsp;        return name+&quot;, &quot;+author+&quot;, &quot;+yearOfPublication;</b>
-<i>21</i>&nbsp;    }
-<i>22</i>&nbsp;
+<i>16</i>&nbsp;    public String toString(){
+<b class="fc"><i>17</i>&nbsp;        return name+&quot;, &quot;+author+&quot;, &quot;+yearOfPublication;</b>
+<i>18</i>&nbsp;    }
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    public boolean match(String otherBook) {
+<b class="fc"><i>22</i>&nbsp;            return this.name.equals(otherBook);</b>
 <i>23</i>&nbsp;
-<i>24</i>&nbsp;    public boolean match(String otherBook) {
-<b class="fc"><i>25</i>&nbsp;            return this.name.equals(otherBook);</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;
 <i>26</i>&nbsp;
-<i>27</i>&nbsp;    }
-<i>28</i>&nbsp;
-<i>29</i>&nbsp;
-<i>30</i>&nbsp;}
+<i>27</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-17 11:06</div>
+    <div style="float:right;">generated on 2015-06-22 09:48</div>
 </div>
 </body>
 </html>

@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 25)
+    (0/ 36)
   </span>
 </td>
 </tr>
@@ -82,49 +82,60 @@
 <i>8</i>&nbsp;
 <i>9</i>&nbsp;    public static void main(String[] args) {
 <i>10</i>&nbsp;
-<b class="nc"><i>11</i>&nbsp;        ArrayList&lt;Book&gt; booksList = new ArrayList&lt;Book&gt;();</b>
-<b class="nc"><i>12</i>&nbsp;        booksList.add(new Book(&quot;Java&quot;, &quot;Jones&quot;, &quot;21Feb2019&quot;));</b>
-<b class="nc"><i>13</i>&nbsp;        booksList.add(new Book(&quot;CN&quot;, &quot;Stalling&quot;, &quot;3Oct1990&quot;));</b>
-<b class="nc"><i>14</i>&nbsp;        LibrarySection&lt;Book&gt; librarySectionBooks = new LibrarySection&lt;Book&gt;(booksList, new ArrayList&lt;Book&gt;());</b>
+<b class="nc"><i>11</i>&nbsp;        ArrayList&lt;User&gt; userList = new ArrayList&lt;User&gt;();</b>
+<b class="nc"><i>12</i>&nbsp;        userList.add(new User(&quot;teju&quot;, &quot;tejubhosle@gmail&quot;, 9850748390l, &quot;teju-123&quot;, &quot;teju&quot;, &quot;user&quot;));</b>
+<b class="nc"><i>13</i>&nbsp;        userList.add(new User(&quot;tejas&quot;, &quot;tejas@gmail&quot;, 9850748390l, &quot;tejas-678&quot;, &quot;tejas&quot;, &quot;user&quot;));</b>
+<b class="nc"><i>14</i>&nbsp;        userList.add(new User(&quot;jone&quot;, &quot;jone@gmail&quot;, 9850748390l, &quot;jone-78&quot;, &quot;jone&quot;, &quot;librarian&quot;));</b>
 <i>15</i>&nbsp;
-<i>16</i>&nbsp;
-<b class="nc"><i>17</i>&nbsp;        ArrayList&lt;Movie&gt; moviesList = new ArrayList&lt;Movie&gt;();</b>
-<b class="nc"><i>18</i>&nbsp;        moviesList.add(new Movie(&quot;movie1&quot;, &quot;1991&quot;, &quot;author1&quot;, &quot;3&quot;));</b>
-<b class="nc"><i>19</i>&nbsp;        moviesList.add(new Movie(&quot;movie2&quot;, &quot;1993&quot;, &quot;author2&quot;, &quot;4&quot;));</b>
-<i>20</i>&nbsp;
-<b class="nc"><i>21</i>&nbsp;        LibrarySection&lt;Movie&gt; librarySectionMovies = new LibrarySection&lt;Movie&gt;(moviesList, new ArrayList&lt;Movie&gt;());</b>
+<b class="nc"><i>16</i>&nbsp;        Users users = new Users(userList);</b>
+<i>17</i>&nbsp;
+<b class="nc"><i>18</i>&nbsp;        HashMap&lt;String, ArrayList&lt;Item&gt;&gt; checkoutHistory = new HashMap&lt;String, ArrayList&lt;Item&gt;&gt;();</b>
+<b class="nc"><i>19</i>&nbsp;        checkoutHistory.put(&quot;teju-123&quot;, new ArrayList&lt;Item&gt;());</b>
+<b class="nc"><i>20</i>&nbsp;        checkoutHistory.put(&quot;tejas-678&quot;, new ArrayList&lt;Item&gt;());</b>
+<b class="nc"><i>21</i>&nbsp;        checkoutHistory.put(&quot;jone-78&quot;, new ArrayList&lt;Item&gt;());</b>
 <i>22</i>&nbsp;
-<b class="nc"><i>23</i>&nbsp;        BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));</b>
-<b class="nc"><i>24</i>&nbsp;        BooksController booksController = new BooksController(bibliotecaView, librarySectionBooks);</b>
-<b class="nc"><i>25</i>&nbsp;        MoviesController moviesController = new MoviesController(bibliotecaView, librarySectionMovies);</b>
+<b class="nc"><i>23</i>&nbsp;        ArrayList&lt;Book&gt; booksList = new ArrayList&lt;Book&gt;();</b>
+<b class="nc"><i>24</i>&nbsp;        booksList.add(new Book(&quot;Java&quot;, &quot;Jones&quot;, &quot;21Feb2019&quot;));</b>
+<b class="nc"><i>25</i>&nbsp;        booksList.add(new Book(&quot;CN&quot;, &quot;Stalling&quot;, &quot;3Oct1990&quot;));</b>
 <i>26</i>&nbsp;
-<b class="nc"><i>27</i>&nbsp;        HashMap&lt;Integer, MenuActionPerformable&gt; menuList = new HashMap&lt;Integer, MenuActionPerformable&gt;();</b>
-<i>28</i>&nbsp;
-<b class="nc"><i>29</i>&nbsp;        menuList.put(1, new ListAllBooks(booksController));</b>
-<b class="nc"><i>30</i>&nbsp;        menuList.put(2, new CheckoutBook(booksController));</b>
-<b class="nc"><i>31</i>&nbsp;        menuList.put(3, new ReturnBook(booksController));</b>
-<b class="nc"><i>32</i>&nbsp;        menuList.put(4, new ListAllMovies(moviesController));</b>
-<b class="nc"><i>33</i>&nbsp;        menuList.put(5, new CheckoutMovie(moviesController));</b>
-<b class="nc"><i>34</i>&nbsp;        menuList.put(6, new ReturnMovie(moviesController));</b>
-<b class="nc"><i>35</i>&nbsp;        menuList.put(7, new Quit());</b>
-<b class="nc"><i>36</i>&nbsp;        menuList.put(8, new InvalidOption(bibliotecaView));</b>
-<i>37</i>&nbsp;
-<i>38</i>&nbsp;
+<b class="nc"><i>27</i>&nbsp;        ArrayList&lt;Movie&gt; moviesList = new ArrayList&lt;Movie&gt;();</b>
+<b class="nc"><i>28</i>&nbsp;        moviesList.add(new Movie(&quot;movie1&quot;, &quot;1991&quot;, &quot;author1&quot;, &quot;3&quot;));</b>
+<b class="nc"><i>29</i>&nbsp;        moviesList.add(new Movie(&quot;movie2&quot;, &quot;1993&quot;, &quot;author2&quot;, &quot;4&quot;));</b>
+<i>30</i>&nbsp;
+<b class="nc"><i>31</i>&nbsp;        BibliotecaView bibliotecaView = new BibliotecaView(new Scanner(System.in));</b>
+<b class="nc"><i>32</i>&nbsp;        ItemController itemController = new ItemController(bibliotecaView);</b>
+<i>33</i>&nbsp;
+<b class="nc"><i>34</i>&nbsp;        HashMap&lt;String, MenuActionPerformable&gt; menuList = new HashMap&lt;String, MenuActionPerformable&gt;();</b>
+<i>35</i>&nbsp;
+<b class="nc"><i>36</i>&nbsp;        CheckoutHistory checkoutHistoryObject = new CheckoutHistory(checkoutHistory, bibliotecaView);</b>
+<b class="nc"><i>37</i>&nbsp;        LibrarySection&lt;Movie&gt; librarySectionMovies = new LibrarySection&lt;Movie&gt;(moviesList, new ArrayList&lt;Movie&gt;(), checkoutHistoryObject);</b>
+<b class="nc"><i>38</i>&nbsp;        LibrarySection&lt;Book&gt; librarySectionBooks = new LibrarySection&lt;Book&gt;(booksList, new ArrayList&lt;Book&gt;(), checkoutHistoryObject);</b>
 <b class="nc"><i>39</i>&nbsp;        Menu menu = new Menu(menuList);</b>
-<i>40</i>&nbsp;
-<b class="nc"><i>41</i>&nbsp;        MenuController menuController = new MenuController(bibliotecaView, menu);</b>
-<i>42</i>&nbsp;
-<b class="nc"><i>43</i>&nbsp;        BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, menuController);</b>
+<b class="nc"><i>40</i>&nbsp;        MenuController menuController = new MenuController(menu);</b>
+<i>41</i>&nbsp;
+<b class="nc"><i>42</i>&nbsp;        BibliotecaApp bibliotecaApp = new BibliotecaApp(bibliotecaView, menuController, users);</b>
+<i>43</i>&nbsp;
 <i>44</i>&nbsp;
-<b class="nc"><i>45</i>&nbsp;        bibliotecaApp.start();</b>
-<i>46</i>&nbsp;    }
-<i>47</i>&nbsp;}
+<b class="nc"><i>45</i>&nbsp;        menuList.put(&quot;List Books&quot;, new ListAllItems(itemController, librarySectionBooks));</b>
+<b class="nc"><i>46</i>&nbsp;        menuList.put(&quot;Checkout Book&quot;, new CheckoutBook(itemController, librarySectionBooks));</b>
+<b class="nc"><i>47</i>&nbsp;        menuList.put(&quot;Return Book&quot;, new ReturnBook(itemController, librarySectionBooks));</b>
+<b class="nc"><i>48</i>&nbsp;        menuList.put(&quot;List Movies&quot;, new ListAllItems(itemController, librarySectionMovies));</b>
+<b class="nc"><i>49</i>&nbsp;        menuList.put(&quot;Checkout Movie&quot;, new CheckoutMovie(itemController, librarySectionMovies));</b>
+<b class="nc"><i>50</i>&nbsp;        menuList.put(&quot;Return Movie&quot;, new ReturnMovie(itemController, librarySectionMovies));</b>
+<b class="nc"><i>51</i>&nbsp;        menuList.put(&quot;Logout&quot;, new Logout(bibliotecaApp));</b>
+<b class="nc"><i>52</i>&nbsp;        menuList.put(&quot;Checkout History&quot;, checkoutHistoryObject);</b>
+<b class="nc"><i>53</i>&nbsp;        menuList.put(&quot;Quit&quot;, new Quit());</b>
+<b class="nc"><i>54</i>&nbsp;        menuList.put(&quot;Invalid Option&quot;, new InvalidOption(bibliotecaView));</b>
+<i>55</i>&nbsp;
+<b class="nc"><i>56</i>&nbsp;        bibliotecaApp.start();</b>
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-17 11:06</div>
+    <div style="float:right;">generated on 2015-06-22 09:48</div>
 </div>
 </body>
 </html>

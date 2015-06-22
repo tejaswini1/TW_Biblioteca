@@ -43,7 +43,6 @@ public class CheckoutHistory implements MenuActionPerformable{
         String result = "";
         result = "User : " + userName + "\n";
         for(Item item : items){
-
             result += item.toString()+"\n";
         }
         return result;

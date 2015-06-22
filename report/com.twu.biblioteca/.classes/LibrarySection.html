@@ -50,12 +50,12 @@
     100%
   </span>
   <span class="absValue">
-    (25/ 25)
+    (28/ 28)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">LibrarySection$$EnhancerByMockitoWithCGLIB$$ae3dd893</td>
+    <td class="name">LibrarySection$$EnhancerByMockitoWithCGLIB$$ccb58e8e</td>
   </tr>
 <tr>
   <td class="name"><strong>total</strong></td>
@@ -72,7 +72,7 @@
     100%
   </span>
   <span class="absValue">
-    (25/ 25)
+    (28/ 28)
   </span>
 </td>
 </tr>
@@ -92,62 +92,66 @@
 <i>8</i>&nbsp;
 <i>9</i>&nbsp;    private ArrayList&lt;T&gt; availableItems;
 <i>10</i>&nbsp;    private ArrayList&lt;T&gt; issuedItems;
-<i>11</i>&nbsp;
-<b class="fc"><i>12</i>&nbsp;    public LibrarySection(ArrayList&lt;T&gt; availableItems, ArrayList&lt;T&gt; issuedItems) {</b>
+<i>11</i>&nbsp;    private CheckoutHistory checkoutHistory;
+<i>12</i>&nbsp;
 <i>13</i>&nbsp;
-<b class="fc"><i>14</i>&nbsp;        this.availableItems = availableItems;</b>
-<b class="fc"><i>15</i>&nbsp;        this.issuedItems = issuedItems;</b>
-<b class="fc"><i>16</i>&nbsp;    }</b>
-<i>17</i>&nbsp;
-<i>18</i>&nbsp;    @Override
-<i>19</i>&nbsp;    public String toString() {
-<b class="fc"><i>20</i>&nbsp;        String result = new String();</b>
-<b class="fc"><i>21</i>&nbsp;        for (T item : availableItems) {</b>
-<b class="fc"><i>22</i>&nbsp;            result += item.toString() + &quot;\n&quot;;</b>
-<i>23</i>&nbsp;        }
-<b class="fc"><i>24</i>&nbsp;        return result;</b>
-<i>25</i>&nbsp;    }
-<i>26</i>&nbsp;
-<i>27</i>&nbsp;    public boolean checkout(String otherBook) {
-<b class="fc"><i>28</i>&nbsp;        ArrayList&lt;T&gt; searchResult = search(otherBook, availableItems);</b>
-<b class="fc"><i>29</i>&nbsp;        for (T book : searchResult) {</b>
-<b class="fc"><i>30</i>&nbsp;            issuedItems.add(book);</b>
-<b class="fc"><i>31</i>&nbsp;            availableItems.remove(book);</b>
-<b class="fc"><i>32</i>&nbsp;            return true;</b>
-<i>33</i>&nbsp;        }
-<i>34</i>&nbsp;
-<b class="fc"><i>35</i>&nbsp;        return false;</b>
-<i>36</i>&nbsp;    }
-<i>37</i>&nbsp;
-<i>38</i>&nbsp;    private ArrayList&lt;T&gt; search(String otherBook, ArrayList&lt;T&gt; bookList) {
-<b class="fc"><i>39</i>&nbsp;        ArrayList&lt;T&gt; resultBooks = new ArrayList&lt;T&gt;();</b>
-<i>40</i>&nbsp;
-<b class="fc"><i>41</i>&nbsp;        for (T item : bookList) {</b>
-<b class="fc"><i>42</i>&nbsp;            if (item.match(otherBook)){</b>
-<b class="fc"><i>43</i>&nbsp;                resultBooks.add(item);</b>
+<b class="fc"><i>14</i>&nbsp;    public LibrarySection(ArrayList&lt;T&gt; availableItems, ArrayList&lt;T&gt; issuedItems, CheckoutHistory checkoutHistory) {</b>
+<i>15</i>&nbsp;
+<b class="fc"><i>16</i>&nbsp;        this.availableItems = availableItems;</b>
+<b class="fc"><i>17</i>&nbsp;        this.issuedItems = issuedItems;</b>
+<b class="fc"><i>18</i>&nbsp;        this.checkoutHistory = checkoutHistory;</b>
+<b class="fc"><i>19</i>&nbsp;    }</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    @Override
+<i>22</i>&nbsp;    public String toString() {
+<b class="fc"><i>23</i>&nbsp;        String result = new String();</b>
+<b class="fc"><i>24</i>&nbsp;        for (T item : availableItems) {</b>
+<b class="fc"><i>25</i>&nbsp;            result += item.toString() + &quot;\n&quot;;</b>
+<i>26</i>&nbsp;        }
+<b class="fc"><i>27</i>&nbsp;        return result;</b>
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    public String checkout(String otherBook, String successfulMessage, String unsuccessfulMessage, String loginId) {
+<b class="fc"><i>31</i>&nbsp;        ArrayList&lt;T&gt; searchResult = search(otherBook, availableItems);</b>
+<b class="fc"><i>32</i>&nbsp;        for (T item : searchResult) {</b>
+<b class="fc"><i>33</i>&nbsp;            issuedItems.add(item);</b>
+<b class="fc"><i>34</i>&nbsp;            availableItems.remove(item);</b>
+<i>35</i>&nbsp;
+<b class="fc"><i>36</i>&nbsp;            checkoutHistory.add(loginId, item);</b>
+<b class="fc"><i>37</i>&nbsp;            return successfulMessage;</b>
+<i>38</i>&nbsp;        }
+<b class="fc"><i>39</i>&nbsp;        return unsuccessfulMessage;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    private ArrayList&lt;T&gt; search(String otherBook, ArrayList&lt;T&gt; bookList) {
+<b class="fc"><i>43</i>&nbsp;        ArrayList&lt;T&gt; resultBooks = new ArrayList&lt;T&gt;();</b>
 <i>44</i>&nbsp;
-<i>45</i>&nbsp;            }
-<i>46</i>&nbsp;        }
-<b class="fc"><i>47</i>&nbsp;        return resultBooks;</b>
-<i>48</i>&nbsp;    }
-<i>49</i>&nbsp;
-<i>50</i>&nbsp;    public boolean returnItem(String otherBook) {
-<b class="fc"><i>51</i>&nbsp;        ArrayList&lt;T&gt; searchResult = search(otherBook, issuedItems);</b>
-<b class="fc"><i>52</i>&nbsp;        for (T book : searchResult) {</b>
-<b class="fc"><i>53</i>&nbsp;            availableItems.add(book);</b>
-<b class="fc"><i>54</i>&nbsp;            issuedItems.remove(book);</b>
-<b class="fc"><i>55</i>&nbsp;            return true;</b>
-<i>56</i>&nbsp;        }
-<i>57</i>&nbsp;
-<b class="fc"><i>58</i>&nbsp;        return false;</b>
-<i>59</i>&nbsp;    }
-<i>60</i>&nbsp;}
+<b class="fc"><i>45</i>&nbsp;        for (T item : bookList) {</b>
+<b class="fc"><i>46</i>&nbsp;            if (item.match(otherBook)){</b>
+<b class="fc"><i>47</i>&nbsp;                resultBooks.add(item);</b>
+<i>48</i>&nbsp;            }
+<i>49</i>&nbsp;        }
+<b class="fc"><i>50</i>&nbsp;        return resultBooks;</b>
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    public String returnItem(String otherBook, String successfulMessage, String unsucessfulMessage, String loginId) {
+<b class="fc"><i>54</i>&nbsp;        ArrayList&lt;T&gt; searchResult = search(otherBook, issuedItems);</b>
+<b class="fc"><i>55</i>&nbsp;        for (T item : searchResult) {</b>
+<b class="fc"><i>56</i>&nbsp;            availableItems.add(item);</b>
+<b class="fc"><i>57</i>&nbsp;            issuedItems.remove(item);</b>
+<i>58</i>&nbsp;
+<b class="fc"><i>59</i>&nbsp;            checkoutHistory.remove(loginId, item);</b>
+<b class="fc"><i>60</i>&nbsp;            return successfulMessage;</b>
+<i>61</i>&nbsp;        }
+<b class="fc"><i>62</i>&nbsp;        return unsucessfulMessage;</b>
+<i>63</i>&nbsp;    }
+<i>64</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-17 11:06</div>
+    <div style="float:right;">generated on 2015-06-22 09:48</div>
 </div>
 </body>
 </html>

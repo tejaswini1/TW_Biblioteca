@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (5/ 5)
+    (6/ 6)
   </span>
 </td>
 </tr>
@@ -76,24 +76,26 @@
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;public class CheckoutMovie implements MenuActionPerformable{
 <i>4</i>&nbsp;
-<i>5</i>&nbsp;    private MoviesController moviesController;
-<i>6</i>&nbsp;
+<i>5</i>&nbsp;    private ItemController itemController;
+<i>6</i>&nbsp;    private LibrarySection librarySection;
 <i>7</i>&nbsp;
-<b class="fc"><i>8</i>&nbsp;    public CheckoutMovie(MoviesController moviesController){</b>
-<b class="fc"><i>9</i>&nbsp;        this.moviesController = moviesController;</b>
-<i>10</i>&nbsp;
-<b class="fc"><i>11</i>&nbsp;    }</b>
+<i>8</i>&nbsp;
+<b class="fc"><i>9</i>&nbsp;    public CheckoutMovie(ItemController itemController, LibrarySection librarySection){</b>
+<b class="fc"><i>10</i>&nbsp;        this.itemController = itemController;</b>
+<b class="fc"><i>11</i>&nbsp;        this.librarySection = librarySection;</b>
 <i>12</i>&nbsp;
-<i>13</i>&nbsp;    public void execute(){
-<b class="fc"><i>14</i>&nbsp;        moviesController.checkout();</b>
-<b class="fc"><i>15</i>&nbsp;    }</b>
-<i>16</i>&nbsp;}
+<b class="fc"><i>13</i>&nbsp;    }</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    public void execute(String loginId){
+<b class="fc"><i>16</i>&nbsp;        itemController.checkout(librarySection, Messages.MOVIE_CHECKOUT_SUCCESSFUL, Messages.MOVIE_CHECKOUT_UNSUCCESSFUL, loginId);</b>
+<b class="fc"><i>17</i>&nbsp;    }</b>
+<i>18</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-17 11:06</div>
+    <div style="float:right;">generated on 2015-06-22 09:48</div>
 </div>
 </body>
 </html>

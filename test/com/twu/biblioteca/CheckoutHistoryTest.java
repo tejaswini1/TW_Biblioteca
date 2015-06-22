@@ -46,4 +46,22 @@ public class CheckoutHistoryTest {
 
     }
 
+    @Test
+    public void shouldDisplayItemsWhichAreNotRemoved(){
+        HashMap<String, ArrayList<Item>> checkoutHistoryList = new HashMap<String, ArrayList<Item>>();
+        checkoutHistoryList.put("teju", new ArrayList<Item>());
+        BibliotecaView bibliotecaView = mock(BibliotecaView.class);
+        Book book = new Book("java", "a1", "12feb");
+
+        CheckoutHistory checkoutHistory = new CheckoutHistory(checkoutHistoryList, bibliotecaView);
+        checkoutHistory.add("teju", book);
+        checkoutHistory.add("teju", new Book("os", "a4", "12feb"));
+        checkoutHistory.remove("teju", book);
+
+        checkoutHistory.execute("teju");
+
+        Mockito.verify(bibliotecaView, times(1)).display("User : teju\nos, a4, 12feb\n\n");
+
+    }
+
 }

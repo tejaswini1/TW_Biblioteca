@@ -55,7 +55,7 @@
 </td>
 </tr>
   <tr>
-    <td class="name">Menu$$EnhancerByMockitoWithCGLIB$$88c225e0</td>
+    <td class="name">Menu$$EnhancerByMockitoWithCGLIB$$a739dbdb</td>
   </tr>
 <tr>
   <td class="name"><strong>total</strong></td>
@@ -89,27 +89,25 @@
 <i>5</i>&nbsp;// handles work related to user and biblioteca system
 <i>6</i>&nbsp;public class Menu {
 <i>7</i>&nbsp;
-<i>8</i>&nbsp;
-<b class="fc"><i>9</i>&nbsp;    private HashMap&lt;Integer, MenuActionPerformable&gt; menuItems = new HashMap&lt;Integer, MenuActionPerformable&gt;();</b>
-<i>10</i>&nbsp;
-<i>11</i>&nbsp;
-<b class="fc"><i>12</i>&nbsp;    public Menu(HashMap&lt;Integer, MenuActionPerformable&gt; menuItems) {</b>
-<b class="fc"><i>13</i>&nbsp;        this.menuItems = menuItems;</b>
-<b class="fc"><i>14</i>&nbsp;    }</b>
-<i>15</i>&nbsp;
-<i>16</i>&nbsp;    public void compute(int option) {
-<b class="fc"><i>17</i>&nbsp;        if (menuItems.get(option) == null)</b>
-<b class="nc"><i>18</i>&nbsp;            menuItems.get(7).execute();</b>
-<i>19</i>&nbsp;        else
-<b class="fc"><i>20</i>&nbsp;            menuItems.get(option).execute();</b>
-<b class="fc"><i>21</i>&nbsp;    }</b>
-<i>22</i>&nbsp;}
+<b class="fc"><i>8</i>&nbsp;    private HashMap&lt;String, MenuActionPerformable&gt; menuItems = new HashMap&lt;String, MenuActionPerformable&gt;();</b>
+<i>9</i>&nbsp;
+<b class="fc"><i>10</i>&nbsp;    public Menu(HashMap&lt;String, MenuActionPerformable&gt; menuItems) {</b>
+<b class="fc"><i>11</i>&nbsp;        this.menuItems = menuItems;</b>
+<b class="fc"><i>12</i>&nbsp;    }</b>
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    public void compute(String option, String loginId) {
+<b class="fc"><i>15</i>&nbsp;        if (menuItems.get(option) == null)</b>
+<b class="nc"><i>16</i>&nbsp;            menuItems.get(&quot;Invalid Option&quot;).execute(loginId);</b>
+<i>17</i>&nbsp;        else
+<b class="fc"><i>18</i>&nbsp;            menuItems.get(option).execute(loginId);</b>
+<b class="fc"><i>19</i>&nbsp;    }</b>
+<i>20</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2015-06-17 11:06</div>
+    <div style="float:right;">generated on 2015-06-22 09:48</div>
 </div>
 </body>
 </html>
