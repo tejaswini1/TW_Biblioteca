@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 
 import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
+import com.twu.biblioteca.InputOutputHandler.Messages;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

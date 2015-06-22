@@ -1,5 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.MenuActions;
 
+import com.twu.biblioteca.BibliotecaApp;
 import com.twu.biblioteca.MenuActions.MenuActionPerformable;
 
 public class Logout implements MenuActionPerformable {

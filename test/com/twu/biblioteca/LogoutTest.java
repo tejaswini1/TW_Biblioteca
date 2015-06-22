@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.MenuActions.Logout;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;

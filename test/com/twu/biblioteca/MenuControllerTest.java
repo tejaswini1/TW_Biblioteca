@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Dispatchers.Menu;
 import com.twu.biblioteca.Dispatchers.MenuController;
 import org.junit.Test;
 

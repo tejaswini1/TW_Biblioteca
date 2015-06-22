@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.Dispatchers.ItemController;
 import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
+import com.twu.biblioteca.InputOutputHandler.Messages;
 import org.junit.Test;
 
 import static org.mockito.Matchers.any;

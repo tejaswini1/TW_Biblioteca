@@ -1,7 +1,7 @@
 package com.twu.biblioteca.MenuActions;
 
 import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
-import com.twu.biblioteca.Messages;
+import com.twu.biblioteca.InputOutputHandler.Messages;
 
 public class InvalidOption implements MenuActionPerformable {
 

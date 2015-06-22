@@ -1,7 +1,5 @@
 package com.twu.biblioteca.Dispatchers;
 
-import com.twu.biblioteca.Menu;
-
 public class MenuController {
 
     private Menu menu;
