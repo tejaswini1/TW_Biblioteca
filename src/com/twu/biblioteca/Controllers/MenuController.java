@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Controllers;
+
+import com.twu.biblioteca.Menu;
 
 public class MenuController {
 

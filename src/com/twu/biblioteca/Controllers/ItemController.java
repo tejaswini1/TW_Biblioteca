@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Controllers;
+
+import com.twu.biblioteca.BibliotecaView;
+import com.twu.biblioteca.LibrarySection;
 
 public class ItemController {
 

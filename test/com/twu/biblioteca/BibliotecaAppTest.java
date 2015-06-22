@@ -1,10 +1,8 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Models.User;
+import com.twu.biblioteca.Controllers.MenuController;
 import com.twu.biblioteca.Validation.Users;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;

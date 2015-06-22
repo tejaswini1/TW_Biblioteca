@@ -1,11 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Controllers.ItemController;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
