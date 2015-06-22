@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.MenuActions.CheckoutHistory;
 import com.twu.biblioteca.MenuActions.CheckoutMovie;
+import com.twu.biblioteca.Models.Movie;
 import org.junit.Test;
 
 import java.util.ArrayList;

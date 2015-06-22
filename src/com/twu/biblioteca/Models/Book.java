@@ -1,8 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Models;
 
 // gives single book details
 
-public class Book implements Item{
+public class Book implements Item {
     private String author;
     private String name;
     private String yearOfPublication;

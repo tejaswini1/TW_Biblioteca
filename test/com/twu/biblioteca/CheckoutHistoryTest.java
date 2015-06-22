@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.MenuActions.CheckoutHistory;
+import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Models.Item;
 import org.junit.Test;
 import org.mockito.Mockito;
 

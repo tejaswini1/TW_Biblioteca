@@ -1,6 +1,9 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.MenuActions.*;
+import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Models.Item;
+import com.twu.biblioteca.Models.Movie;
 import com.twu.biblioteca.Models.User;
 import com.twu.biblioteca.Validation.Users;
 

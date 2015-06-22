@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.Models.Movie;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
