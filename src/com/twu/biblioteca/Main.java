@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Validation.User;
+import com.twu.biblioteca.MenuActions.*;
+import com.twu.biblioteca.Models.User;
 import com.twu.biblioteca.Validation.Users;
 
 import java.util.ArrayList;

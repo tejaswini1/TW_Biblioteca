@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.MenuActions.InvalidOption;
+import com.twu.biblioteca.MenuActions.ListItems;
+import com.twu.biblioteca.MenuActions.MenuActionPerformable;
 import org.junit.Test;
 import org.mockito.Mockito;
 import java.util.HashMap;

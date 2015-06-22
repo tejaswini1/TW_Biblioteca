@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.BibliotecaView;
-import com.twu.biblioteca.InvalidOption;
+import com.twu.biblioteca.MenuActions.InvalidOption;
 import org.junit.Test;
 
 import static org.mockito.Matchers.anyString;

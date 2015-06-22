@@ -1,4 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.MenuActions;
+
+import com.twu.biblioteca.ItemController;
+import com.twu.biblioteca.LibrarySection;
+import com.twu.biblioteca.Messages;
 
 public class CheckoutBook implements MenuActionPerformable {
 

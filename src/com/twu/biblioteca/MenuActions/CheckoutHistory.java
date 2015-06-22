@@ -1,9 +1,12 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.MenuActions;
+
+import com.twu.biblioteca.BibliotecaView;
+import com.twu.biblioteca.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CheckoutHistory implements MenuActionPerformable{
+public class CheckoutHistory implements MenuActionPerformable {
 
     private HashMap<String, ArrayList<Item>> history ;
     private BibliotecaView bibliotecaView;

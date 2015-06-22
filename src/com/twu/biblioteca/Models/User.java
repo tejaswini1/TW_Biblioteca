@@ -1,4 +1,4 @@
-package com.twu.biblioteca.Validation;
+package com.twu.biblioteca.Models;
 
 public class User {
 

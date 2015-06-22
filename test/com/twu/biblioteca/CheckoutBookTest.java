@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.MenuActions.CheckoutBook;
+import com.twu.biblioteca.MenuActions.CheckoutHistory;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,6 +1,10 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.MenuActions;
 
-public class CheckoutMovie implements MenuActionPerformable{
+import com.twu.biblioteca.ItemController;
+import com.twu.biblioteca.LibrarySection;
+import com.twu.biblioteca.Messages;
+
+public class CheckoutMovie implements MenuActionPerformable {
 
     private ItemController itemController;
     private LibrarySection librarySection;

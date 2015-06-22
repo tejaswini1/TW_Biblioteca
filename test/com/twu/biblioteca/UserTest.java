@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Validation.User;
+import com.twu.biblioteca.Models.User;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

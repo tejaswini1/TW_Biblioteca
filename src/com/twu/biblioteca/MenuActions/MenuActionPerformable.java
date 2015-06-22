@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.MenuActions;
 
 public interface MenuActionPerformable {
     void execute(String loginId);

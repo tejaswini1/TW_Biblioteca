@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.MenuActions;
+
+import com.twu.biblioteca.MenuActions.MenuActionPerformable;
 
 public class Quit implements MenuActionPerformable {
 

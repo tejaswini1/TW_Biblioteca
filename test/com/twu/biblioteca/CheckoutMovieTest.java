@@ -1,11 +1,12 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.MenuActions.CheckoutHistory;
+import com.twu.biblioteca.MenuActions.CheckoutMovie;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;

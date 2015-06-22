@@ -1,6 +1,6 @@
 package com.twu.biblioteca.Validation;
 
-import com.twu.biblioteca.Validation.User;
+import com.twu.biblioteca.Models.User;
 
 import java.util.ArrayList;
 

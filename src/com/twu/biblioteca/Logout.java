@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
-public class Logout implements MenuActionPerformable{
+import com.twu.biblioteca.MenuActions.MenuActionPerformable;
+
+public class Logout implements MenuActionPerformable {
 
     private BibliotecaApp bibliotecaApp;
 
