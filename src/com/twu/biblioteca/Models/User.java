@@ -19,7 +19,7 @@ public class User {
     }
 
     public String toString() {
-        return name + "\n" + email + "\n" + phoneNumber;
+        return "NAME : "+name +"\n"+"EMAIL ID : "  +email + "\n"+"PHONE NO. : " + phoneNumber;
     }
 
     public boolean match(String loginId, String password) {

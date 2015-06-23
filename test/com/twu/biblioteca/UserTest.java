@@ -13,7 +13,7 @@ public class UserTest {
 
         String actual = users.toString();
 
-        assertEquals("teju\ntejubhosle123@gmail.com\n9850678439", actual);
+        assertEquals("NAME : teju\nEMAIL ID : tejubhosle123@gmail.com\nPHONE NO. : 9850678439", actual);
     }
 
     @Test
