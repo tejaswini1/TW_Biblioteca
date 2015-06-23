@@ -58,7 +58,7 @@ public class UsersTest {
 
         String actual = users.displayValidUser("teju-123");
 
-        assertEquals("teju\nt@gmail\n635839", actual);
+        assertEquals("\nteju\nt@gmail\n635839\n", actual);
     }
 
 }
