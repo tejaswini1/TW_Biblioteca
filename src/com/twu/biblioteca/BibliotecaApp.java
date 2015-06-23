@@ -49,7 +49,7 @@ public class BibliotecaApp {
                 bibliotecaView.display(users.displayValidUser(loginID));
 
                 do {
-                    bibliotecaView.display(Messages.INITIAL_MENU_ITEM);
+
                     bibliotecaView.display(Messages.MENU_ITEMS);
                     if (role.equals("Librarian"))
                         bibliotecaView.display(Messages.LIBRARIAN_MENU_ITEMS);

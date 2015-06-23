@@ -29,6 +29,6 @@ public class Users {
             if(user.equals(loginId))
                  result = user.toString();
         }
-        return result;
+        return "\n"+result+"\n";
     }
 }
