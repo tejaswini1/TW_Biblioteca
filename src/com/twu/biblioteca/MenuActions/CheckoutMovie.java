@@ -9,11 +9,9 @@ public class CheckoutMovie implements MenuActionPerformable {
     private ItemController itemController;
     private LibrarySection librarySection;
 
-
     public CheckoutMovie(ItemController itemController, LibrarySection librarySection){
         this.itemController = itemController;
         this.librarySection = librarySection;
-
     }
 
     public void execute(String loginId){

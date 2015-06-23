@@ -3,6 +3,7 @@ package com.twu.biblioteca.Dispatchers;
 import com.twu.biblioteca.InputOutputHandler.BibliotecaView;
 import com.twu.biblioteca.LibrarySection;
 
+//Dispatches request of particular item  to LibrarySection class to execute operation
 
 public class ItemController {
 
